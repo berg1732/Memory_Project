@@ -89,9 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\startFormBG.png" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

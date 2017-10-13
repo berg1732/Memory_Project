@@ -259,3 +259,12 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Memory_Project/Resources/Card8.jpg
+/Memory_Project/Resources/Card7.jpg
+/Memory_Project/Resources/Card6.jpg
+/Memory_Project/Resources/Card5.jpg
+/Memory_Project/Resources/Card4.jpg
+/Memory_Project/Resources/Card3.jpg
+/Memory_Project/Resources/Card2.jpg
+/Memory_Project/Resources/Card1.jpg
+/Memory_Project/Resources/Cover.jpg
