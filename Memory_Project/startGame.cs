@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Memory_Project
 {
+    /// <summary>
+    /// Formulier voor het Hoofd menu
+    /// </summary>
     public partial class startGame : Form
     {
         public startGame()
