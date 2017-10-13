@@ -36,36 +36,34 @@
             // buttonStartGame
             // 
             this.buttonStartGame.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonStartGame.Location = new System.Drawing.Point(516, 55);
-            this.buttonStartGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonStartGame.Location = new System.Drawing.Point(387, 45);
             this.buttonStartGame.Name = "buttonStartGame";
-            this.buttonStartGame.Size = new System.Drawing.Size(100, 28);
+            this.buttonStartGame.Size = new System.Drawing.Size(75, 23);
             this.buttonStartGame.TabIndex = 0;
             this.buttonStartGame.Text = "Start Game";
             this.buttonStartGame.UseVisualStyleBackColor = false;
+            this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
             // 
             // buttonLeaderboard
             // 
             this.buttonLeaderboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonLeaderboard.Location = new System.Drawing.Point(516, 92);
-            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(387, 75);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(100, 28);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
             // 
             // startGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Memory_Project.Properties.Resources.startFormBG;
-            this.ClientSize = new System.Drawing.Size(679, 629);
+            this.ClientSize = new System.Drawing.Size(509, 511);
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.buttonStartGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "startGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

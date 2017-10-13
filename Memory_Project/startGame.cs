@@ -19,5 +19,17 @@ namespace Memory_Project
         {
             InitializeComponent();
         }
+
+        private void buttonStartGame_Click(object sender, EventArgs e)
+        {
+                {
+                    // Create a new instance of the Form2 class
+                    Game startGame = new Game();
+
+                    // Show the settings form
+                    startGame.Show();
+                }
+            
+        }
     }
 }
