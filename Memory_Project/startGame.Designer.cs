@@ -45,12 +45,13 @@
             // 
             // buttonLeaderboard
             // 
+            this.buttonLeaderboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonLeaderboard.Location = new System.Drawing.Point(387, 75);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
             this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
-            this.buttonLeaderboard.UseVisualStyleBackColor = true;
+            this.buttonLeaderboard.UseVisualStyleBackColor = false;
             // 
             // startGame
             // 
