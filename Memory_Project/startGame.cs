@@ -23,11 +23,11 @@ namespace Memory_Project
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
                 {
-                    // Create a new instance of the Form2 class
-                    Game startGame = new Game();
+                    // Een nieuwe instance aan maken. (Game Class)
+                    Game Game = new Game();
 
-                    // Show the settings form
-                    startGame.Show();
+                    // De Game laten weergeven
+                    Game.Show();
                 }
             
         }
