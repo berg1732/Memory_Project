@@ -12,9 +12,39 @@ namespace Memory_Project
 {
     public partial class Game : Form
     {
+       
+        
+        /// <summary>
+        /// Methode voor algmeen Array PictureBox
+        /// </summary>
+        private PictureBox[] PictureBoxes
+        {
+            get { return Controls.OfType<PictureBox>().ToArray(); }
+        }
+        /// <summary>
+        /// Images uit de resources map halen
+        /// </summary>
+        private static IEnumerable<Image> Images
+        {
+            get
+            {
+                return new Image[]
+                {
+                    Resources.CardG1;
+
+                };
+            }
+        }
+
         public Game()
         {
             InitializeComponent();
         }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

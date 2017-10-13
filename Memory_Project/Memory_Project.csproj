@@ -59,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,9 +88,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\CardG1.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\startFormBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardG8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoverG.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
