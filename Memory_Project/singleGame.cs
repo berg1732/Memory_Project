@@ -211,5 +211,9 @@ namespace Memory_Project
             clickTimer.Stop();
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetImages();
+        }
     }
 }
