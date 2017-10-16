@@ -16,8 +16,29 @@ namespace Memory_Project
     /// </summary>
     public partial class Game : Form
     {
+        public int turn = 0;
+        private bool allowClick = true;
+        private PictureBox firstGuess;
+        private readonly Random random = new Random();
+        private readonly Timer clickTimer = new Timer();
+        int ticks = 45;
+        int scoreP1 = 0;
+        int scoreP2 = 0;
         private readonly Timer timer1= new Timer();
         private readonly Timer timer2 = new Timer();
+        public Game()
+        {
+            InitializeComponent();
+            setRandomImages();
+
+
+            lblShowImages.Text = "5";
+            timerShowImages.Start();
+
+            clickTimer.Interval = 1000;
+            clickTimer.Tick += clickTimer_Tick;
+        }
+
         /// <summary>
         /// Methode voor algmeen Array PictureBox
         /// </summary>
@@ -25,49 +46,200 @@ namespace Memory_Project
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
+
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-        private void GameWindow_Load(object sender, EventArgs e)
+        private static IEnumerable<Image> Images
         {
-            foreach (PictureBox picture in Cardsholder.Images)
+            get
             {
-                picture.Enabled = false;
+                return new Image[]
+                {
+                    Properties.Resources.CardG1,
+                    Properties.Resources.CardG2,
+                    Properties.Resources.CardG3,
+                    Properties.Resources.CardG4,
+                    Properties.Resources.CardG5,
+                    Properties.Resources.CardG6,
+                    Properties.Resources.CardG7,
+                    Properties.Resources.CardG8
+                };
             }
-            timer1.Start();
-            timer2.Start();
-
-            //All pictureboxes -> pictures 
-            #region Pictures
-            Card1.Image = Properties.Resources.CardG1;
-            Card2.Image = Properties.Resources.CardG1;
-            Card3.Image = Properties.Resources.CardG2;
-            Card4.Image = Properties.Resources.CardG2;
-            Card5.Image = Properties.Resources.CardG3;
-            Card6.Image = Properties.Resources.CardG3;
-            Card7.Image = Properties.Resources.CardG4;
-            Card8.Image = Properties.Resources.CardG4;
-            Card9.Image = Properties.Resources.CardG5;
-            Card10.Image = Properties.Resources.CardG5;
-            Card11.Image = Properties.Resources.CardG6;
-            Card12.Image = Properties.Resources.CardG6;
-            Card13.Image = Properties.Resources.CardG7;
-            Card14.Image = Properties.Resources.CardG7;
-            Card15.Image = Properties.Resources.CardG8;
-            Card16.Image = Properties.Resources.CardG8;
-
-            #endregion
         }
 
-
-        public Game()
+        /// <summary>
+        /// Timer om de afbeeldingen voor 5 seconde weer te geven
+        /// </summary>
+        private void timerShowImages_Tick(object sender, EventArgs e)
         {
-            InitializeComponent();
+            int timer = Convert.ToInt32(lblShowImages.Text);
+            timer = timer - 1;
+            lblShowImages.Text = Convert.ToString(timer);
+            if (timer == 0)
+            {
+                timerShowImages.Stop();
+                startGameTimer();
+                hideImages();
+            }
+            else
+            {
+                showImages();
+            }
         }
-       
-        private void Game_Load(object sender, EventArgs e)
-        {
 
+        private void showImages()
+        {
+            foreach (var pic in PictureBoxes)
+            {
+                pic.Image = (Image)pic.Tag;
+
+            }
+        }
+
+        /// <summary>
+        /// Start de Timer van de Game
+        /// </summary>
+        private void startGameTimer()
+        {
+            timer.Start();
+            timer.Tick += delegate
+            {
+                ticks--;
+                if (ticks == -1)
+                {
+                    timer.Stop();
+                    MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    resetImages();
+                }
+                var time = TimeSpan.FromSeconds(ticks);
+                //lblTime.Text = "00:" + time.ToString("ss");
+            };
+
+        }
+
+        /// <summary>
+        /// Reset Images bij nadat 45 secondes zijn afgelopen
+        /// </summary>
+        private void resetImages()
+        {
+            foreach (var pic in PictureBoxes)
+            {
+                pic.Tag = null;
+                pic.Visible = true;
+            }
+            hideImages();
+            setRandomImages();
+            ticks = 45;
+            timer.Start();
+        }
+
+        /// <summary>
+        /// Image verbergen
+        /// </summary>
+        private void hideImages()
+        {
+            foreach (var pic in PictureBoxes)
+            {
+                pic.Image = Properties.Resources.CoverG;
+            }
+        }
+
+        /// <summary>
+        /// Als er een vrij slot is zoek dan nieuw image
+        /// </summary>
+        private PictureBox getFreeSlot()
+        {
+            int num;
+            do
+            {
+                num = random.Next(0, PictureBoxes.Count());
+            } while (PictureBoxes[num].Tag != null);
+            return PictureBoxes[num];
+        }
+
+        /// <summary>
+        /// Random image setten op vrij slot
+        /// </summary>
+        private void setRandomImages()
+        {
+            foreach (var image in Images)
+            {
+                getFreeSlot().Tag = image;
+                getFreeSlot().Tag = image;
+            }
+        }
+
+        /// <summary>
+        /// Click van image op picturebox zodat image wordt gedraaid
+        /// Als geen paar hebt dan image weer verbergen
+        /// Als ze gelijk zijn verwijder dan de image van het speelveld
+        /// </summary>
+        private void clickImage(object sender, EventArgs e)
+        {
+            if (!allowClick) return;
+            var pic = (PictureBox)sender;
+            if (firstGuess == null)
+            {
+                firstGuess = pic;
+                pic.Image = (Image)pic.Tag;
+                return;
+            }
+            pic.Image = (Image)pic.Tag;
+            if (pic.Image == firstGuess.Image && pic != firstGuess)
+            {
+                pic.Visible = firstGuess.Visible = false;
+                {
+                    firstGuess = pic;
+                }
+                if (this.turn == 0)
+                {
+                    scoreP1++; ;
+                }
+                else
+                {
+                    scoreP2++;
+                }
+                hideImages();
+            }
+            else
+            {
+                switchTurns();
+                allowClick = false;
+                clickTimer.Start();
+            }
+            firstGuess = null;
+            if (PictureBoxes.Any(p => p.Visible)) return;
+            String winPlayer = "";
+            if (scoreP1 > scoreP2)
+            {
+                winPlayer = "speler 1";
+
+            }
+            else
+            {
+                winPlayer = "speler 2";
+            }
+            MessageBox.Show("Gefeliciteerd " + winPlayer + "heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            resetImages();
+        }
+
+        private void clickTimer_Tick(object sender, EventArgs e)
+        {
+            hideImages();
+            allowClick = true;
+            clickTimer.Stop();
+        }
+        private void switchTurns()
+        {
+            if (this.turn == 0)
+            {
+                turn = 1;
+            }
+            else
+            {
+                turn = 0;
+            }
         }
     }
 
