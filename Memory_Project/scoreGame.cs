@@ -14,19 +14,24 @@ namespace Memory_Project
     public partial class scoreGame : Form
     {
         string text  = "";
-        //string text = File.ReadAllText(Properties.Resources.scoreboard);
-        string[] lines = File.ReadAllLines(Properties.Resources.scoreboard);
 
-        
+        public scoreGame()
+        {
+            InitializeComponent();
+            readScore();
+        }
 
         private void readScore()
         {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../scoreboard.txt");
+            string[] lines = File.ReadAllLines(path);
+
             // Display the file contents by using a foreach loop.
             // Convert.ToString(richBoxScore.Text);
             foreach (string line in lines)
             {
 
-                text += Environment.NewLine+ line;
+                text +=  line + Environment.NewLine ;
                 
             }
             richBoxScore.Text = text;
