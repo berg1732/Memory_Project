@@ -20,7 +20,7 @@ namespace Memory_Project
             InitializeComponent();
         }
 
-        private void buttonStartGame_Click(object sender, EventArgs e)
+        private void buttonMultiplayer_Click(object sender, EventArgs e)
         {
                 {
                     // Een nieuwe instance aan maken. (Game Class)
@@ -30,6 +30,15 @@ namespace Memory_Project
                     Game.Show();
                 }
             
+        }
+
+        private void buttonSingleplayer_Click(object sender, EventArgs e)
+        {
+            {
+                singleGame singleGame = new singleGame();
+
+                singleGame.Show();
+            }
         }
     }
 }

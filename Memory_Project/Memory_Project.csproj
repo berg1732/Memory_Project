@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="singleGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="singleGame.Designer.cs">
+      <DependentUpon>singleGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="startGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="singleGame.resx">
+      <DependentUpon>singleGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="startGame.resx">
       <DependentUpon>startGame.cs</DependentUpon>
