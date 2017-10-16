@@ -49,6 +49,9 @@
             this.Card14 = new System.Windows.Forms.PictureBox();
             this.Card15 = new System.Windows.Forms.PictureBox();
             this.Card16 = new System.Windows.Forms.PictureBox();
+            this.lblTurn = new System.Windows.Forms.Label();
+            this.lblScoreP1 = new System.Windows.Forms.Label();
+            this.lblScoreP2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card3)).BeginInit();
@@ -252,11 +255,41 @@
             this.Card16.TabStop = false;
             this.Card16.Click += new System.EventHandler(this.clickImage);
             // 
+            // lblTurn
+            // 
+            this.lblTurn.AutoSize = true;
+            this.lblTurn.Location = new System.Drawing.Point(613, 35);
+            this.lblTurn.Name = "lblTurn";
+            this.lblTurn.Size = new System.Drawing.Size(158, 17);
+            this.lblTurn.TabIndex = 19;
+            this.lblTurn.Text = "speler 1 is aan de beurt";
+            // 
+            // lblScoreP1
+            // 
+            this.lblScoreP1.AutoSize = true;
+            this.lblScoreP1.Location = new System.Drawing.Point(616, 72);
+            this.lblScoreP1.Name = "lblScoreP1";
+            this.lblScoreP1.Size = new System.Drawing.Size(75, 17);
+            this.lblScoreP1.TabIndex = 20;
+            this.lblScoreP1.Text = "speler 1: 0";
+            // 
+            // lblScoreP2
+            // 
+            this.lblScoreP2.AutoSize = true;
+            this.lblScoreP2.Location = new System.Drawing.Point(616, 103);
+            this.lblScoreP2.Name = "lblScoreP2";
+            this.lblScoreP2.Size = new System.Drawing.Size(75, 17);
+            this.lblScoreP2.TabIndex = 21;
+            this.lblScoreP2.Text = "speler 2: 0";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 868);
+            this.Controls.Add(this.lblScoreP2);
+            this.Controls.Add(this.lblScoreP1);
+            this.Controls.Add(this.lblTurn);
             this.Controls.Add(this.Card16);
             this.Controls.Add(this.lblShowImages);
             this.Controls.Add(this.Card15);
@@ -323,5 +356,8 @@
         private System.Windows.Forms.PictureBox Card14;
         private System.Windows.Forms.PictureBox Card15;
         private System.Windows.Forms.PictureBox Card16;
+        private System.Windows.Forms.Label lblTurn;
+        private System.Windows.Forms.Label lblScoreP1;
+        private System.Windows.Forms.Label lblScoreP2;
     }
 }

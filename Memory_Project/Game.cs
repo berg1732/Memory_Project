@@ -194,11 +194,13 @@ namespace Memory_Project
                 }
                 if (this.turn == 0)
                 {
-                    scoreP1++; ;
+                    scoreP1++;
+                    lblScoreP1.Text = "speler 1: " + scoreP1;
                 }
                 else
                 {
                     scoreP2++;
+                    lblScoreP2.Text = "speler 2: " + scoreP2;
                 }
                 hideImages();
             }
@@ -240,6 +242,8 @@ namespace Memory_Project
             {
                 turn = 0;
             }
+            lblTurn.Text = "speler " + (turn + 1) + " is aan de beurt";
+
         }
     }
 
