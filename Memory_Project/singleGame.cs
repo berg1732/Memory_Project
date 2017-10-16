@@ -16,7 +16,7 @@ namespace Memory_Project
         private PictureBox firstGuess;
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
-        int ticks = 45;
+        int ticks = 0;
         public singleGame()
         {
             InitializeComponent();
@@ -96,8 +96,8 @@ namespace Memory_Project
             timer.Start();
             timer.Tick += delegate
             {
-                ticks--;
-                if (ticks == -1)
+                ticks++;
+                if (ticks == 145)
                 {
                     timer.Stop();
                     MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -119,10 +119,10 @@ namespace Memory_Project
                 pic.Tag = null;
                 pic.Visible = true;
             }
-            hideImages();
+            lblShowImages.Text = "5";
+            lblTime.Text = "00:00";
             setRandomImages();
-            ticks = 45;
-            timer.Start();
+            timerShowImages.Start();
         }
 
         /// <summary>
