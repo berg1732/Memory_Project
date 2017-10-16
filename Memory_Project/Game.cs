@@ -133,6 +133,8 @@ namespace Memory_Project
                 pic.Tag = null;
                 pic.Visible = true;
             }
+            scoreP1 = 0;
+            scoreP2 = 0;
             hideImages();
             setRandomImages();
             ticks = 45;
@@ -250,6 +252,12 @@ namespace Memory_Project
                 lblTurn.Text = naamP2 + " is aan de beurt";
             }
             
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetImages();
 
         }
     }

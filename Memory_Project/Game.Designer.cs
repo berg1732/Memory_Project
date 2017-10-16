@@ -52,6 +52,7 @@
             this.lblTurn = new System.Windows.Forms.Label();
             this.lblScoreP1 = new System.Windows.Forms.Label();
             this.lblScoreP2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card3)).BeginInit();
@@ -282,11 +283,22 @@
             this.lblScoreP2.TabIndex = 21;
             this.lblScoreP2.Text = "speler 2: 0";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(606, 264);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 22;
+            this.btnReset.Text = "reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 868);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblScoreP2);
             this.Controls.Add(this.lblScoreP1);
             this.Controls.Add(this.lblTurn);
@@ -359,5 +371,6 @@
         private System.Windows.Forms.Label lblTurn;
         private System.Windows.Forms.Label lblScoreP1;
         private System.Windows.Forms.Label lblScoreP2;
+        private System.Windows.Forms.Button btnReset;
     }
 }
