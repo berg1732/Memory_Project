@@ -12,6 +12,8 @@ namespace Memory_Project
 {
     public partial class singleGame : Form
     {
+        string naam = "naam";
+
         private bool allowClick = true;
         private PictureBox firstGuess;
         private readonly Random random = new Random();
@@ -20,6 +22,8 @@ namespace Memory_Project
         public singleGame()
         {
             InitializeComponent();
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+
             setRandomImages();
 
 
