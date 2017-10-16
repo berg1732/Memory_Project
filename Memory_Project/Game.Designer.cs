@@ -84,7 +84,7 @@
             // 
             this.lblShowImages.AutoSize = true;
             this.lblShowImages.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowImages.Location = new System.Drawing.Point(645, 182);
+            this.lblShowImages.Location = new System.Drawing.Point(621, 199);
             this.lblShowImages.Name = "lblShowImages";
             this.lblShowImages.Size = new System.Drawing.Size(23, 25);
             this.lblShowImages.TabIndex = 18;
@@ -258,7 +258,7 @@
             // lblTurn
             // 
             this.lblTurn.AutoSize = true;
-            this.lblTurn.Location = new System.Drawing.Point(613, 35);
+            this.lblTurn.Location = new System.Drawing.Point(589, 52);
             this.lblTurn.Name = "lblTurn";
             this.lblTurn.Size = new System.Drawing.Size(158, 17);
             this.lblTurn.TabIndex = 19;
@@ -267,7 +267,7 @@
             // lblScoreP1
             // 
             this.lblScoreP1.AutoSize = true;
-            this.lblScoreP1.Location = new System.Drawing.Point(616, 72);
+            this.lblScoreP1.Location = new System.Drawing.Point(592, 89);
             this.lblScoreP1.Name = "lblScoreP1";
             this.lblScoreP1.Size = new System.Drawing.Size(75, 17);
             this.lblScoreP1.TabIndex = 20;
@@ -276,7 +276,7 @@
             // lblScoreP2
             // 
             this.lblScoreP2.AutoSize = true;
-            this.lblScoreP2.Location = new System.Drawing.Point(616, 103);
+            this.lblScoreP2.Location = new System.Drawing.Point(592, 120);
             this.lblScoreP2.Name = "lblScoreP2";
             this.lblScoreP2.Size = new System.Drawing.Size(75, 17);
             this.lblScoreP2.TabIndex = 21;

@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.VisualBasic;
 namespace Memory_Project
 {
     
     /// <summary>
-    /// Formulier voor het speelveld
+    /// Formulier voor het speelveld voor multiplayer games op dezelfde pc
     /// </summary>
     public partial class Game : Form
     {
@@ -22,6 +22,8 @@ namespace Memory_Project
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
         int ticks = 45;
+        string naamP1 = "speler 1";
+        string naamP2 = "speler 2";
         int scoreP1 = 0;
         int scoreP2 = 0;
         private readonly Timer timer1= new Timer();
@@ -30,8 +32,11 @@ namespace Memory_Project
         {
             InitializeComponent();
             setRandomImages();
-
-
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
+            lblScoreP1.Text = naamP1 + ": " + scoreP1;
+            lblScoreP2.Text = naamP2 + ": " + scoreP2;
+            lblTurn.Text = naamP1 + " is aan de beurt";
             lblShowImages.Text = "5";
             timerShowImages.Start();
 
@@ -108,9 +113,9 @@ namespace Memory_Project
                 ticks--;
                 if (ticks == -1)
                 {
-                    timer.Stop();
-                    MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    resetImages();
+                    //timer.Stop();
+                    //MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // resetImages();
                 }
                 var time = TimeSpan.FromSeconds(ticks);
                 //lblTime.Text = "00:" + time.ToString("ss");
@@ -195,12 +200,12 @@ namespace Memory_Project
                 if (this.turn == 0)
                 {
                     scoreP1++;
-                    lblScoreP1.Text = "speler 1: " + scoreP1;
+                    lblScoreP1.Text = naamP1 + ": " + scoreP1;
                 }
                 else
                 {
                     scoreP2++;
-                    lblScoreP2.Text = "speler 2: " + scoreP2;
+                    lblScoreP2.Text = naamP2 + ": " + scoreP2;
                 }
                 hideImages();
             }
@@ -215,14 +220,14 @@ namespace Memory_Project
             String winPlayer = "";
             if (scoreP1 > scoreP2)
             {
-                winPlayer = "speler 1";
+                winPlayer = naamP1;
 
             }
             else
             {
-                winPlayer = "speler 2";
+                winPlayer = naamP2;
             }
-            MessageBox.Show("Gefeliciteerd " + winPlayer + "heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
             resetImages();
         }
 
@@ -237,12 +242,14 @@ namespace Memory_Project
             if (this.turn == 0)
             {
                 turn = 1;
+                lblTurn.Text = naamP1 + " is aan de beurt";
             }
             else
             {
                 turn = 0;
+                lblTurn.Text = naamP2 + " is aan de beurt";
             }
-            lblTurn.Text = "speler " + (turn + 1) + " is aan de beurt";
+            
 
         }
     }
