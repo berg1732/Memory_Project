@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualBasic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace Memory_Project
         public singleGame()
         {
             InitializeComponent();
-            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+            naam = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
 
             setRandomImages();
 
