@@ -161,6 +161,16 @@ namespace Memory_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Albert 00:45
+        ///.
+        /// </summary>
+        internal static string scoreboard {
+            get {
+                return ResourceManager.GetString("scoreboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap startFormBG {

@@ -40,5 +40,12 @@ namespace Memory_Project
                 singleGame.Show();
             }
         }
+
+        private void buttonLeaderboard_Click(object sender, EventArgs e)
+        {
+            scoreGame scoreGame = new scoreGame();
+
+            scoreGame.Show();
+        }
     }
 }

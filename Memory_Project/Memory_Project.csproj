@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="scoreGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scoreGame.Designer.cs">
+      <DependentUpon>scoreGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="singleGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scoreGame.resx">
+      <DependentUpon>scoreGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="singleGame.resx">
       <DependentUpon>singleGame.cs</DependentUpon>
@@ -129,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CardG1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\scoreboard.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

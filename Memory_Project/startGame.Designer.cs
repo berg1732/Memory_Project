@@ -56,6 +56,7 @@
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
+            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
             // 
             // buttonSingleplayer
             // 
