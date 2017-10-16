@@ -12,7 +12,7 @@ namespace Memory_Project
 {
     
     /// <summary>
-    /// Formulier voor het speelveld
+    /// Formulier voor het speelveld voor multiplayer games op dezelfde pc
     /// </summary>
     public partial class Game : Form
     {
@@ -108,9 +108,9 @@ namespace Memory_Project
                 ticks--;
                 if (ticks == -1)
                 {
-                    timer.Stop();
-                    MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    resetImages();
+                    //timer.Stop();
+                    //MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // resetImages();
                 }
                 var time = TimeSpan.FromSeconds(ticks);
                 //lblTime.Text = "00:" + time.ToString("ss");
