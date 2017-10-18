@@ -115,7 +115,7 @@ namespace Memory_Project
         }
 
         /// <summary>
-        /// Reset Images bij nadat 45 secondes zijn afgelopen
+        /// Reset Images. Gekoppeld met btnReset_Click()
         /// </summary>
         private void resetImages()
         {
@@ -124,14 +124,17 @@ namespace Memory_Project
                 pic.Tag = null;
                 pic.Visible = true;
             }
+            timer.Stop();
+            resetTimer();
             lblShowImages.Text = "5";
-            lblTime.Text = "00:00";
             setRandomImages();
             timerShowImages.Start();
+           
+            
         }
 
         /// <summary>
-        /// Image verbergen
+        /// Image verbergen via CoverG
         /// </summary>
         private void hideImages()
         {
@@ -155,7 +158,7 @@ namespace Memory_Project
         }
 
         /// <summary>
-        /// Random image setten op vrij slot
+        /// Random image zetten op vrij picturebox plaats
         /// </summary>
         private void setRandomImages()
         {
@@ -187,7 +190,6 @@ namespace Memory_Project
                 pic.Visible = firstGuess.Visible = false;
                 {
                     firstGuess = pic;
-                    //scoreCounter.Text = Convert.ToString(Convert.ToInt32(scoreCounter.Text) + 1);
                 }
                 hideImages();
             }
@@ -195,7 +197,6 @@ namespace Memory_Project
             {
                 allowClick = false;
                 clickTimer.Start();
-                //scoreCounter.Text = Convert.ToString(Convert.ToInt32(scoreCounter.Text) - 1);
             }
             firstGuess = null;
             if (PictureBoxes.Any(p => p.Visible)) return;
@@ -209,6 +210,22 @@ namespace Memory_Project
             hideImages();
             allowClick = true;
             clickTimer.Stop();
+        }
+
+        /// <summary>
+        /// Timer resetten: ticks naar 0 seconden om lblTime.Text naar 00:00 te krijgen
+        /// -1 tick om weer de op 1 seconde tick te komen
+        /// </summary>
+        private void resetTimer()
+        {
+            ticks = 0;
+            var time = TimeSpan.FromSeconds(ticks);
+            lblTime.Text = "00:" + time.ToString("ss");
+
+            timer.Tick += delegate
+            {
+                ticks = ticks -1;
+            };
         }
 
         private void btnReset_Click(object sender, EventArgs e)
