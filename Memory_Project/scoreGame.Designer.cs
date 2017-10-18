@@ -38,8 +38,9 @@
             // singleScoreBox
             // 
             this.singleScoreBox.Location = new System.Drawing.Point(11, 51);
-            this.singleScoreBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.singleScoreBox.Margin = new System.Windows.Forms.Padding(2);
             this.singleScoreBox.Name = "singleScoreBox";
+            this.singleScoreBox.ReadOnly = true;
             this.singleScoreBox.Size = new System.Drawing.Size(150, 222);
             this.singleScoreBox.TabIndex = 0;
             this.singleScoreBox.Text = "";
@@ -48,6 +49,7 @@
             // 
             this.multiScoreBox.Location = new System.Drawing.Point(233, 50);
             this.multiScoreBox.Name = "multiScoreBox";
+            this.multiScoreBox.ReadOnly = true;
             this.multiScoreBox.Size = new System.Drawing.Size(150, 222);
             this.multiScoreBox.TabIndex = 1;
             this.multiScoreBox.Text = "";
@@ -80,7 +82,7 @@
             this.Controls.Add(this.multiScoreBox);
             this.Controls.Add(this.singleScoreBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "scoreGame";
             this.Text = "Leaderboard";
             this.ResumeLayout(false);
