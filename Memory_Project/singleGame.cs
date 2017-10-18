@@ -102,10 +102,10 @@ namespace Memory_Project
             timer.Tick += delegate
             {
                 ticks++;
-                if (ticks == 145)
+                if (ticks == 180)
                 {
                     timer.Stop();
-                    MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Zolang al mee bezig", "Restarten?", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     resetImages();
                 }
                 var time = TimeSpan.FromSeconds(ticks);
