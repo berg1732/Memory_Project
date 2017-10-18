@@ -34,7 +34,7 @@ namespace Memory_Project
                 text +=  line + Environment.NewLine ;
                 
             }
-            singleScoreBox.Text = text;
+            singleScoreBox.Text = text; // Score voor singleplayer
         }
 
     }
