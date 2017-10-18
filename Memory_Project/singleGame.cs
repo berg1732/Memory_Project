@@ -69,11 +69,13 @@ namespace Memory_Project
         /// </summary>
         private void timerShowImages_Tick(object sender, EventArgs e)
         {
+            allowClick = false;
             int timer = Convert.ToInt32(lblShowImages.Text);
             timer = timer - 1;
             lblShowImages.Text = Convert.ToString(timer);
             if (timer == 0)
             {
+                allowClick = true;
                 timerShowImages.Stop();
                 startGameTimer();
                 hideImages();

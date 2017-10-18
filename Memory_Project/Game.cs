@@ -21,13 +21,12 @@ namespace Memory_Project
         private PictureBox firstGuess;
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
-        int ticks = 45;
+       
         string naamP1 = "speler 1";
         string naamP2 = "speler 2";
         int scoreP1 = 0;
         int scoreP2 = 0;
-        private readonly Timer timer1= new Timer();
-        private readonly Timer timer2 = new Timer();
+       
         public Game()
         {
             InitializeComponent();
@@ -78,13 +77,14 @@ namespace Memory_Project
         /// </summary>
         private void timerShowImages_Tick(object sender, EventArgs e)
         {
+            allowClick = false;
             int timer = Convert.ToInt32(lblShowImages.Text);
             timer = timer - 1;
             lblShowImages.Text = Convert.ToString(timer);
             if (timer == 0)
             {
+                allowClick = true;
                 timerShowImages.Stop();
-                startGameTimer();
                 hideImages();
             }
             else
@@ -105,24 +105,6 @@ namespace Memory_Project
         /// <summary>
         /// Start de Timer van de Game
         /// </summary>
-        private void startGameTimer()
-        {
-            timer.Start();
-            timer.Tick += delegate
-            {
-                ticks--;
-                if (ticks == -1)
-                {
-                    //timer.Stop();
-                    //MessageBox.Show("Tijd is afgelopen.", "Helaas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   // resetImages();
-                }
-                var time = TimeSpan.FromSeconds(ticks);
-                //lblTime.Text = "00:" + time.ToString("ss");
-            };
-
-        }
-
         /// <summary>
         /// Reset Images bij nadat 45 secondes zijn afgelopen
         /// </summary>
@@ -137,8 +119,6 @@ namespace Memory_Project
             scoreP2 = 0;
             hideImages();
             setRandomImages();
-            ticks = 45;
-            timer.Start();
         }
 
         /// <summary>
