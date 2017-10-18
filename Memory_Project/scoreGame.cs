@@ -34,7 +34,7 @@ namespace Memory_Project
                 text +=  line + Environment.NewLine ;
                 
             }
-            richBoxScore.Text = text;
+            singleScoreBox.Text = text;
         }
 
     }
