@@ -236,10 +236,28 @@ namespace Memory_Project
             
 
         }
-
+        
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetImages();
+
+        }
+        /// <summary>
+        /// do not touch
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_SaveGame_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// do not touch
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_LoadGame_Click(object sender, EventArgs e)
+        {
 
         }
     }
