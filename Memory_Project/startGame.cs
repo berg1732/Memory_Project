@@ -47,5 +47,10 @@ namespace Memory_Project
 
             scoreGame.Show();
         }
+
+        private void startGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

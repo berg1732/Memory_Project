@@ -37,10 +37,9 @@
             // buttonMultiplayer
             // 
             this.buttonMultiplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonMultiplayer.Location = new System.Drawing.Point(580, 69);
-            this.buttonMultiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonMultiplayer.Location = new System.Drawing.Point(387, 45);
             this.buttonMultiplayer.Name = "buttonMultiplayer";
-            this.buttonMultiplayer.Size = new System.Drawing.Size(112, 35);
+            this.buttonMultiplayer.Size = new System.Drawing.Size(75, 23);
             this.buttonMultiplayer.TabIndex = 0;
             this.buttonMultiplayer.Text = "Multiplayer";
             this.buttonMultiplayer.UseVisualStyleBackColor = false;
@@ -49,10 +48,9 @@
             // buttonLeaderboard
             // 
             this.buttonLeaderboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonLeaderboard.Location = new System.Drawing.Point(580, 114);
-            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(387, 74);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(112, 35);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
@@ -61,10 +59,9 @@
             // buttonSingleplayer
             // 
             this.buttonSingleplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSingleplayer.Location = new System.Drawing.Point(580, 24);
-            this.buttonSingleplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSingleplayer.Location = new System.Drawing.Point(387, 16);
             this.buttonSingleplayer.Name = "buttonSingleplayer";
-            this.buttonSingleplayer.Size = new System.Drawing.Size(112, 35);
+            this.buttonSingleplayer.Size = new System.Drawing.Size(75, 23);
             this.buttonSingleplayer.TabIndex = 2;
             this.buttonSingleplayer.Text = "Singleplayer";
             this.buttonSingleplayer.UseVisualStyleBackColor = false;
@@ -72,20 +69,20 @@
             // 
             // startGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Memory_Project.Properties.Resources.startFormBG;
-            this.ClientSize = new System.Drawing.Size(764, 786);
+            this.ClientSize = new System.Drawing.Size(509, 511);
             this.Controls.Add(this.buttonSingleplayer);
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.buttonMultiplayer);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "startGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory Game";
+            this.Load += new System.EventHandler(this.startGame_Load);
             this.ResumeLayout(false);
 
         }

@@ -234,5 +234,15 @@ namespace Memory_Project
         {
             resetImages();
         }
+
+        private void singleGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,5 +37,9 @@ namespace Memory_Project
             singleScoreBox.Text = text; // Score voor singleplayer
         }
 
+        private void scoreGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
