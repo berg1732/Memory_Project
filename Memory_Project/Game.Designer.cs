@@ -271,18 +271,18 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(454, 204);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(85, 29);
             this.btnReset.TabIndex = 22;
-            this.btnReset.Text = "reset";
+            this.btnReset.Text = "Restart";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // button_SaveGame
             // 
             this.button_SaveGame.Location = new System.Drawing.Point(454, 253);
-            this.button_SaveGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_SaveGame.Margin = new System.Windows.Forms.Padding(2);
             this.button_SaveGame.Name = "button_SaveGame";
             this.button_SaveGame.Size = new System.Drawing.Size(85, 29);
             this.button_SaveGame.TabIndex = 23;
@@ -293,7 +293,7 @@
             // button_LoadGame
             // 
             this.button_LoadGame.Location = new System.Drawing.Point(454, 305);
-            this.button_LoadGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.button_LoadGame.Name = "button_LoadGame";
             this.button_LoadGame.Size = new System.Drawing.Size(85, 29);
             this.button_LoadGame.TabIndex = 24;
@@ -306,6 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(735, 675);
             this.Controls.Add(this.button_LoadGame);
             this.Controls.Add(this.button_SaveGame);

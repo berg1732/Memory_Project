@@ -220,8 +220,10 @@ namespace Memory_Project
             {
                 file.WriteLine(winPlayer+"   "+WinningScore+" points");
             }
+            scoreGame scoreGame = new scoreGame();
+
+            scoreGame.Show();
             
-            resetImages();
         }
 
         private void clickTimer_Tick(object sender, EventArgs e)
