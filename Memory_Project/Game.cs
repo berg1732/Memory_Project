@@ -118,7 +118,9 @@ namespace Memory_Project
             scoreP1 = 0;
             scoreP2 = 0;
             hideImages();
+            lblShowImages.Text = "5";
             setRandomImages();
+            timerShowImages.Start();
         }
 
         /// <summary>
