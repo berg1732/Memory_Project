@@ -26,6 +26,7 @@ namespace Memory_Project
         string naamP2 = "speler 2";
         int scoreP1 = 0;
         int scoreP2 = 0;
+        int WinningScore;
        
         public Game()
         {
@@ -205,13 +206,21 @@ namespace Memory_Project
             if (scoreP1 > scoreP2)
             {
                 winPlayer = naamP1;
-
+                WinningScore = scoreP1;
             }
             else
             {
                 winPlayer = naamP2;
+                WinningScore = scoreP2;
             }
+
             MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
+            {
+                file.WriteLine(winPlayer+"   "+WinningScore+" points");
+            }
+            
             resetImages();
         }
 
