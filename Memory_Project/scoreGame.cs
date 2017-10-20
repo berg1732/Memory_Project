@@ -53,7 +53,7 @@ namespace Memory_Project
         /// </summary>
         private void readMultiScore()
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/VICOTRY.wav");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/scoreboardMulti.txt");
             string[] lines = File.ReadAllLines(path);
             Dictionary<string, List<int>> dic = new Dictionary<string, List<int>>();
 
