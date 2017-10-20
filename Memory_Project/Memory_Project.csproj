@@ -150,6 +150,7 @@
     <None Include="Resources\CardG1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Achtergrondgeluid.wav" />
     <Content Include="Resources\scoreboard.txt" />
     <Content Include="Resources\scoreboardMulti.txt" />
   </ItemGroup>
