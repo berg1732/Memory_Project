@@ -204,6 +204,11 @@ namespace Memory_Project
             if (PictureBoxes.Any(p => p.Visible)) return;
             timer.Stop();
             MessageBox.Show("Gefeliciteerd.", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(@"../../Resources/scoreboard.txt", true))
+            {
+                file.WriteLine(naam + "  :  " + lblTime.Text + " time");
+            }
             resetImages();
         }
 
