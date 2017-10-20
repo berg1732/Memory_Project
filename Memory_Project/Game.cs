@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.IO;
 namespace Memory_Project
 {
     
@@ -55,7 +56,7 @@ namespace Memory_Project
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-        private static IEnumerable<Image> Images
+       /* private static IEnumerable<Image> Images
         {
             get
             {
@@ -71,8 +72,24 @@ namespace Memory_Project
                     Properties.Resources.CardG8
                 };
             }
-        }
+        }*/
 
+        private static IEnumerable<Image> Images
+        {
+            get
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                var result = new List<Image>();
+                var list = System.IO.Directory.GetFiles(path, "*.jpg");
+                foreach (var item in list)
+                {
+                    var img = Image.FromFile(item);
+                    img.Tag = item;
+                    result.Add(img);
+                }
+                return result;
+            }
+        }
         /// <summary>
         /// Timer om de afbeeldingen voor 5 seconde weer te geven
         /// </summary>
@@ -157,8 +174,36 @@ namespace Memory_Project
             {
                 getFreeSlot().Tag = image;
                 getFreeSlot().Tag = image;
+                for (int i = 0; i < 2; i++)
+                {
+                    var box = PictureBoxes.FirstOrDefault(x => x.Tag == null);
+                    if (box == null)
+                    {
+                        Console.WriteLine("box is null");
+                    }
+                    else
+                    {
+                        box.Image = image;
+                    }
+
+                }
             }
         }
+        /*private void setRandomImages()
+        {
+            foreach (var image in Images)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    var box = PictureBoxes.FirstOrDefault(x => x.Tag == null);
+                    if (box == null)
+                        Console.WriteLine("box is null");
+                    box.Image = image;
+                }
+            }
+        }*/
+
+
 
         /// <summary>
         /// Click van image op picturebox zodat image wordt gedraaid
@@ -260,7 +305,18 @@ namespace Memory_Project
         /// <param name="e"></param>
         private void button_SaveGame_Click(object sender, EventArgs e)
         {
+            foreach (var picBox in PictureBoxes)
 
+            {
+
+                using (System.IO.StreamWriter file =
+                    new System.IO.StreamWriter(@"C:\Users\Admin\source\repos\Memory_Project\Memory_Project\Resources\testie.txt", true))
+                {
+                    Bitmap bitmap = (Bitmap)picBox.Tag;
+                    
+                    file.WriteLine(bitmap.Tag);
+                }
+            }
         }
         /// <summary>
         /// do not touch

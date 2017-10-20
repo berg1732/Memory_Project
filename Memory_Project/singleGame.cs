@@ -8,6 +8,7 @@ using System.Text;
 using Microsoft.VisualBasic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Memory_Project
 {
@@ -50,17 +51,16 @@ namespace Memory_Project
         {
             get
             {
-                return new Image[]
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                var result = new List<Image>();
+                var list = System.IO.Directory.GetFiles(path, "*.jpg");
+                foreach (var item in list)
                 {
-                    Properties.Resources.CardG1,
-                    Properties.Resources.CardG2,
-                    Properties.Resources.CardG3,
-                    Properties.Resources.CardG4,
-                    Properties.Resources.CardG5,
-                    Properties.Resources.CardG6,
-                    Properties.Resources.CardG7,
-                    Properties.Resources.CardG8
-                };
+                    var img = Image.FromFile(item);
+                    img.Tag = item;
+                    result.Add(img);
+                }
+                return result;
             }
         }
 

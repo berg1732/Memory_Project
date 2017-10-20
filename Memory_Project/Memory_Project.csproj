@@ -120,25 +120,25 @@
     <None Include="Resources\startFormBG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG2.jpg" />
+    <None Include="Resources\deck\CardG2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG3.jpg" />
+    <None Include="Resources\deck\CardG3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG4.jpg" />
+    <None Include="Resources\deck\CardG4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG5.jpg" />
+    <None Include="Resources\deck\CardG5.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG6.jpg" />
+    <None Include="Resources\deck\CardG6.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG7.jpg" />
+    <None Include="Resources\deck\CardG7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG8.jpg" />
+    <None Include="Resources\deck\CardG8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CoverG.jpg" />
@@ -147,7 +147,7 @@
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CardG1.jpg" />
+    <None Include="Resources\deck\CardG1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\scoreboard.txt" />
