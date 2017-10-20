@@ -259,6 +259,10 @@ namespace Memory_Project
                 WinningScore = scoreP2;
             }
 
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/Achtergrondgeluid.wav");
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(path);
+            sp.Play();
+
             MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
             using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
