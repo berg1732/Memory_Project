@@ -16,6 +16,8 @@ namespace Memory_Project
     {
         string naam = "naam";
 
+        static string path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/Achtergrondgeluid.wav");
+        System.Media.SoundPlayer sp = new System.Media.SoundPlayer(path);
         private bool allowClick = true;
         private PictureBox firstGuess;
         private readonly Random random = new Random();
@@ -34,6 +36,12 @@ namespace Memory_Project
 
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
+
+            
+           
+            //sp.PlayLooping();
+            sp.Play();
+           
         }
 
         /// <summary>
@@ -248,6 +256,11 @@ namespace Memory_Project
         private void lblTime_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void singleGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            sp.Stop();
         }
     }
 }

@@ -327,6 +327,11 @@ namespace Memory_Project
         {
 
         }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
