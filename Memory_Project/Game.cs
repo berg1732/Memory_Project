@@ -62,6 +62,7 @@ namespace Memory_Project
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
                 pictureBox[i].ImageLocation = (path +"CoverG"+".jpg");
+                pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 flowLayoutPanel1.Controls.Add(pictureBox[i]);
                 flowLayoutPanel1.Show();
                 i++;
