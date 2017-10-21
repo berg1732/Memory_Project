@@ -22,7 +22,7 @@ namespace Memory_Project
         private PictureBox firstGuess;
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
-       
+        PictureBox[] pictureBox = new PictureBox[50];
         string naamP1 = "speler 1";
         string naamP2 = "speler 2";
         int scoreP1 = 0;
@@ -31,49 +31,56 @@ namespace Memory_Project
        
         public Game()
         {
+            
             InitializeComponent();
-            setRandomImages();
+            
+            
             naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
             naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
             lblScoreP2.Text = naamP2 + ": " + scoreP2;
             lblTurn.Text = naamP1 + " is aan de beurt";
             lblShowImages.Text = "5";
+            setPictureBoxes();
+            setRandomImages();
             timerShowImages.Start();
 
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
         }
 
+        private void setPictureBoxes()
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
+            int i = 0;
+            while (i <= 16 -1)
+
+            {
+                pictureBox[i] = new PictureBox();
+                pictureBox[i].Name = "pictureBox" + i;
+                pictureBox[i].Size = new Size(100, 150);
+                pictureBox[i].Show();
+                pictureBox[i].Tag = null;
+                pictureBox[i].ImageLocation = (path +"CoverG"+".jpg");
+                flowLayoutPanel1.Controls.Add(pictureBox[i]);
+                flowLayoutPanel1.Show();
+                i++;
+            }
+        }
+
+    
         /// <summary>
         /// Methode voor algmeen Array PictureBox
         /// </summary>
         private PictureBox[] PictureBoxes
         {
-            get { return Controls.OfType<PictureBox>().ToArray(); }
+            
+            get { return flowLayoutPanel1.Controls.OfType<PictureBox>().ToArray(); }
         }
 
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-       /* private static IEnumerable<Image> Images
-        {
-            get
-            {
-                return new Image[]
-                {
-                    Properties.Resources.CardG1,
-                    Properties.Resources.CardG2,
-                    Properties.Resources.CardG3,
-                    Properties.Resources.CardG4,
-                    Properties.Resources.CardG5,
-                    Properties.Resources.CardG6,
-                    Properties.Resources.CardG7,
-                    Properties.Resources.CardG8
-                };
-            }
-        }*/
-
         private static IEnumerable<Image> Images
         {
             get
@@ -151,7 +158,7 @@ namespace Memory_Project
                 pic.Image = Properties.Resources.CoverG;
             }
         }
-
+        
         /// <summary>
         /// Als er een vrij slot is zoek dan nieuw image
         /// </summary>
@@ -332,10 +339,7 @@ namespace Memory_Project
 
         }
 
-        private void Game_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
 }
