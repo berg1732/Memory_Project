@@ -63,10 +63,18 @@ namespace Memory_Project
                 pictureBox[i].Tag = null;
                 pictureBox[i].ImageLocation = (path +"CoverG"+".jpg");
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
-                flowLayoutPanel1.Controls.Add(pictureBox[i]);
-                flowLayoutPanel1.Show();
                 i++;
             }
+            i = 0;
+            for (int ix = 0; ix < 4; ix++)
+            {
+                for (int iy = 0; iy < 4; iy++)
+                {
+                    pictureBox[i].Location = new Point(40 + ix * 100, 50 + iy * 150);
+                    i++;
+                }
+            }
+            Controls.AddRange(pictureBox);
         }
 
     
@@ -76,7 +84,7 @@ namespace Memory_Project
         private PictureBox[] PictureBoxes
         {
             
-            get { return flowLayoutPanel1.Controls.OfType<PictureBox>().ToArray(); }
+            get { return this.Controls.OfType<PictureBox>().ToArray(); }
         }
 
         /// <summary>
