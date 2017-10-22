@@ -283,7 +283,7 @@ namespace Memory_Project
             using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
             {
-                file.WriteLine(winPlayer+"   "+WinningScore+" points");
+                file.WriteLine(winPlayer+":   "+WinningScore+" points");
             }
             scoreGame scoreGame = new scoreGame();
 
