@@ -96,7 +96,7 @@ namespace Memory_Project
             {
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
                 var result = new List<Image>();
-                var list = System.IO.Directory.GetFiles(path, "*.jpg");
+                var list = Directory.GetFiles(path, "*.jpg");
                 foreach (var item in list)
                 {
                     var img = Image.FromFile(item);
@@ -127,6 +127,10 @@ namespace Memory_Project
             }
         }
 
+        /// <summary>
+        /// Show images.
+        /// Voor elke pic.image show image.tag
+        /// </summary>
         private void showImages()
         {
             foreach (var pic in PictureBoxes)
@@ -205,22 +209,7 @@ namespace Memory_Project
                 }
             }
         }
-        /*private void setRandomImages()
-        {
-            foreach (var image in Images)
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    var box = PictureBoxes.FirstOrDefault(x => x.Tag == null);
-                    if (box == null)
-                        Console.WriteLine("box is null");
-                    box.Image = image;
-                }
-            }
-        }*/
-
-
-
+       
         /// <summary>
         /// Click van image op picturebox zodat image wordt gedraaid
         /// Als geen paar hebt dan image weer verbergen
@@ -275,13 +264,13 @@ namespace Memory_Project
                 WinningScore = scoreP2;
             }
 
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/Achtergrondgeluid.wav");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/VICTORY.wav");
             System.Media.SoundPlayer sp = new System.Media.SoundPlayer(path);
             sp.Play();
 
             MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
+            using (StreamWriter file =
+            new StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
             {
                 file.WriteLine(winPlayer+":   "+WinningScore+" points");
             }
@@ -319,23 +308,28 @@ namespace Memory_Project
 
         }
         /// <summary>
-        /// do not touch
+        /// Save pictureboxes places + score + name + beurt
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button_SaveGame_Click(object sender, EventArgs e)
         {
-            foreach (var picBox in PictureBoxes)
+            
+            DateTime time = DateTime.Now;   // Tijd nu
+
+            using (StreamWriter file =
+                      new StreamWriter(@"../../Resources/savefiles/" + "SaveGame-" + time.ToString("dd_MM_yyyy_HH_mm") + ".txt", true)) // File aanmaken
 
             {
-
-                using (System.IO.StreamWriter file =
-                    new System.IO.StreamWriter(@"C:\Users\Admin\source\repos\Memory_Project\Memory_Project\Resources\testie.txt", true))
+                
+                foreach (var picBox in PictureBoxes)    // Voor elke Picturebox doe...
                 {
-                    Bitmap bitmap = (Bitmap)picBox.Tag;
-                    
-                    file.WriteLine(bitmap.Tag);
+                    Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
+                    file.WriteLine(bitmap.Tag);         // Pictureboxes saven
                 }
+                file.WriteLine(naamP1.ToString());      // Naam speler 1
+                file.WriteLine(scoreP1.ToString());     // Score speler 1
+                file.WriteLine(naamP2.ToString());      // Naam speler 2
+                file.WriteLine(scoreP2.ToString());     // Score speler 2
+                file.WriteLine(lblTurn.ToString());     // Beurt welke speler
             }
         }
         /// <summary>

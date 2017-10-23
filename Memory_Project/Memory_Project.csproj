@@ -154,5 +154,8 @@
     <Content Include="Resources\scoreboard.txt" />
     <Content Include="Resources\scoreboardMulti.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\savefiles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
