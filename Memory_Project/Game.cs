@@ -360,9 +360,9 @@ namespace Memory_Project
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception error)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + error.Message);
                 }
             }
         }
