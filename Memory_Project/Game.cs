@@ -319,7 +319,7 @@ namespace Memory_Project
                       new StreamWriter(@"../../Resources/savefiles/" + "SaveGame-" + time.ToString("dd_MM_yyyy_HH_mm") + ".txt", true)) // File aanmaken
 
             {
-                
+
                 foreach (var picBox in PictureBoxes)    // Voor elke Picturebox doe...
                 {
                     Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
@@ -339,7 +339,32 @@ namespace Memory_Project
         /// <param name="e"></param>
         private void button_LoadGame_Click(object sender, EventArgs e)
         {
+            Stream myStream = null;
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/saveFiles/");
 
+            OpenFileDialog openFile= new OpenFileDialog();  // Nieuwe fileDialog venster
+            openFile.InitialDirectory = @"c:\\"+path;       // Pad naar savFiles
+            openFile.Filter = "Text files (*.txt)|*.txt";   // Filteren op .txt files
+            openFile.FilterIndex = 2;                       // Twee index filters
+            openFile.RestoreDirectory = true; 
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = openFile.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            // Insert code to read the stream here.
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
 
        
