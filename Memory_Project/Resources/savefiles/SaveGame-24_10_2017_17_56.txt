@@ -1,0 +1,21 @@
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG3.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG2.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG3.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG7.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG7.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG1.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG4.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG8.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG6.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG8.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG6.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG1.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG4.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG5.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG2.jpg
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deck\CardG5.jpg
+speler 1
+0
+speler 2
+1
+System.Windows.Forms.Label, Text: speler 1 is aan de beurt

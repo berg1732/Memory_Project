@@ -365,6 +365,12 @@ namespace Memory_Project
                             }
                         }
                     }
+                    List<string> text = File.ReadLines(openFile.FileName).Reverse().Take(5).ToList();
+                    int q = 1;
+                    naamP2 = text[2];
+                    scoreP2 = Int32.Parse(text[1]);
+                    scoreP1 = Int32.Parse(text[3]);
+                    naamP1 = text[4];
                 }
                 catch (Exception error)
                 {
