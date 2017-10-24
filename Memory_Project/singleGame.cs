@@ -15,7 +15,7 @@ namespace Memory_Project
     public partial class singleGame : Form
     {
         string naam = "naam";
-
+        PictureBox[] pictureBox = new PictureBox[50];
         static string path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/Achtergrondgeluid.wav");
         System.Media.SoundPlayer sp = new System.Media.SoundPlayer(path);
         private bool allowClick = true;
@@ -28,6 +28,8 @@ namespace Memory_Project
             InitializeComponent();
             naam = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
 
+
+            setPictureBoxes();
             setRandomImages();
 
 
@@ -43,13 +45,40 @@ namespace Memory_Project
             sp.Play();
            
         }
+        private void setPictureBoxes()
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
+            int i = 0;
+            while (i <= 16 - 1)
+
+            {
+                pictureBox[i] = new PictureBox();
+                pictureBox[i].Name = "pictureBox" + i;
+                pictureBox[i].Size = new Size(100, 150);
+                pictureBox[i].Show();
+                pictureBox[i].Tag = null;
+                pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+                pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
+                i++;
+            }
+            i = 0;
+            for (int ix = 0; ix < 4; ix++)
+            {
+                for (int iy = 0; iy < 4; iy++)
+                {
+                    pictureBox[i].Location = new Point(40 + ix * 100, 50 + iy * 150);
+                    i++;
+                }
+            }
+            Controls.AddRange(pictureBox);
+        }
 
         /// <summary>
         /// Methode voor algmeen Array PictureBox
         /// </summary>
         private PictureBox[] PictureBoxes
         {
-            get { return Controls.OfType<PictureBox>().ToArray(); }
+            get { return this.Controls.OfType<PictureBox>().ToArray(); }
         }
 
         /// <summary>
@@ -176,6 +205,19 @@ namespace Memory_Project
             {
                 getFreeSlot().Tag = image;
                 getFreeSlot().Tag = image;
+                for (int i = 0; i < 2; i++)
+                {
+                    var box = PictureBoxes.FirstOrDefault(x => x.Tag == null);
+                    if (box == null)
+                    {
+                        Console.WriteLine("box is null");
+                    }
+                    else
+                    {
+                        box.Image = image;
+                    }
+
+                }
             }
         }
 

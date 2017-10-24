@@ -340,7 +340,7 @@ namespace Memory_Project
         private void button_LoadGame_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/saveFiles/");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/savefiles/");
 
             OpenFileDialog openFile= new OpenFileDialog();  // Nieuwe fileDialog venster
             openFile.InitialDirectory = @"c:\\"+path;       // Pad naar savFiles
@@ -373,7 +373,10 @@ namespace Memory_Project
             }
         }
 
-       
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
