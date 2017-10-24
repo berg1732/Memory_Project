@@ -354,9 +354,15 @@ namespace Memory_Project
                 {
                     if ((myStream = openFile.OpenFile()) != null)
                     {
-                        using (myStream)
+                        using (StreamReader reader = new StreamReader(myStream))
                         {
-                            // Insert code to read the stream here.
+                            string line;
+                            foreach (var pic in PictureBoxes) // Voor elke Picturebox doe dan..
+                            {
+                                line = reader.ReadLine();   // Lees de lines in bestand
+                                pic.ImageLocation = line;   // Zet line naar picturebox.imageLocation
+                                //showImages(); <- is om te testen of loading picturebox images werkt
+                            }
                         }
                     }
                 }
