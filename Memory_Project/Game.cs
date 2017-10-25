@@ -60,7 +60,29 @@ namespace Memory_Project
                 pictureBox[i].Size = new Size(100, 150);
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
-                pictureBox[i].ImageLocation = (path +"CoverG"+".jpg");
+                
+                startGame startGame = new startGame();
+                bool gameDeckCheck = startGame.deckSettingGame();
+                bool musicDeckCheck = startGame.deckSettingMusic();
+                bool memeDeckCheck = startGame.deckSettingMeme();
+
+                if (gameDeckCheck == true)
+                {
+                    pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+                }
+                if (musicDeckCheck == true)
+                {
+                    pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
+                }
+                if (memeDeckCheck == true)
+                {
+                    pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                }
+                else
+                {
+                    pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                }
+
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 i++;
             }
