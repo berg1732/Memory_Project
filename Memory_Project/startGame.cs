@@ -15,9 +15,14 @@ namespace Memory_Project
     /// </summary>
     public partial class startGame : Form
     {
+        private ToolStripMenuItem temp;
         public startGame()
         {
             InitializeComponent();
+            this.gameToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            temp = this.decksToolStripMenuItem;
         }
 
         private void buttonMultiplayer_Click(object sender, EventArgs e)
@@ -47,10 +52,13 @@ namespace Memory_Project
 
             scoreGame.Show();
         }
-
-        private void startGame_Load(object sender, EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // uncheck 
+            temp.CheckState = CheckState.Unchecked;
+            temp = (ToolStripMenuItem)sender;
+            // check 
+            temp.CheckState = CheckState.Checked;
         }
     }
 }

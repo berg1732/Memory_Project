@@ -366,7 +366,6 @@ namespace Memory_Project
                         }
                     }
                     List<string> text = File.ReadLines(openFile.FileName).Reverse().Take(5).ToList();
-                    int q = 1;
                     naamP2 = text[2];
                     scoreP2 = Int32.Parse(text[1]);
                     scoreP1 = Int32.Parse(text[3]);
@@ -377,11 +376,6 @@ namespace Memory_Project
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + error.Message);
                 }
             }
-        }
-
-        private void Game_Load(object sender, EventArgs e)
-        {
-
         }
     }
 
