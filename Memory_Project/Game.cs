@@ -27,7 +27,7 @@ namespace Memory_Project
         int scoreP1 = 0;
         int scoreP2 = 0;
         int WinningScore;
-
+        private startGame StartGame;
         
         public Game()
         {
@@ -47,6 +47,24 @@ namespace Memory_Project
             clickTimer.Tick += clickTimer_Tick;
 
         }
+        public Game(startGame ParentForm)
+        {
+
+            InitializeComponent();
+            this.StartGame = ParentForm;
+
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
+            lblScoreP1.Text = naamP1 + ": " + scoreP1;
+            lblScoreP2.Text = naamP2 + ": " + scoreP2;
+            lblTurn.Text = naamP1 + " is aan de beurt";
+            lblShowImages.Text = "5";
+            setPictureBoxes();
+            setRandomImages();
+            timerShowImages.Start();
+            clickTimer.Interval = 1000;
+            clickTimer.Tick += clickTimer_Tick;
+        }
 
         private void setPictureBoxes()
         {
@@ -60,28 +78,37 @@ namespace Memory_Project
                 pictureBox[i].Size = new Size(100, 150);
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
-                
-                startGame startGame = new startGame();
-                bool gameDeckCheck = startGame.deckSettingGame();
-                bool musicDeckCheck = startGame.deckSettingMusic();
-                bool memeDeckCheck = startGame.deckSettingMeme();
 
-                if (gameDeckCheck == true)
+                if (StartGame != null)
                 {
-                    pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
-                }
-                if (musicDeckCheck == true)
-                {
-                    pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
-                }
-                if (memeDeckCheck == true)
-                {
-                    pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    bool gameDeckCheck = StartGame.deckSettingGame();
+                    bool musicDeckCheck = StartGame.deckSettingMusic();
+                    bool memeDeckCheck = StartGame.deckSettingMeme();
+                    if (gameDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+                    }
+                    if (musicDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
+                    }
+                    if (memeDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
+                    else
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
                 }
                 else
                 {
+
                     pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
                 }
+                
+
+                
 
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 i++;
