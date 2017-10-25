@@ -138,14 +138,13 @@ namespace Memory_Project
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-        private static IEnumerable<Image> Images
+        private  IEnumerable<Image> Images
         {
             get
             {
-                startGame startGame = new startGame();
-                bool gameDeckCheck = startGame.deckSettingGame();
-                bool musicDeckCheck = startGame.deckSettingMusic();
-                bool memeDeckCheck = startGame.deckSettingMeme();
+                bool gameDeckCheck = StartGame.deckSettingGame();
+                bool musicDeckCheck = StartGame.deckSettingMusic();
+                bool memeDeckCheck = StartGame.deckSettingMeme();
                 if (gameDeckCheck == true)
                 {
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
@@ -159,7 +158,7 @@ namespace Memory_Project
                     }
                     return result;
                 }
-                if (musicDeckCheck == true)
+                else if (musicDeckCheck == true)
                 {
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
                     var result = new List<Image>();
@@ -172,7 +171,7 @@ namespace Memory_Project
                     }
                     return result;
                 }
-                if (memeDeckCheck == true)
+                else if (memeDeckCheck == true)
                 {
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
                     var result = new List<Image>();
@@ -260,10 +259,10 @@ namespace Memory_Project
         /// </summary>
         private void hideImages()
         {
-            startGame startGame = new startGame();
-            bool gameDeckCheck = startGame.deckSettingGame();
-            bool musicDeckCheck = startGame.deckSettingMusic();
-            bool memeDeckCheck = startGame.deckSettingMeme();
+
+            bool gameDeckCheck = StartGame.deckSettingGame();
+            bool musicDeckCheck = StartGame.deckSettingMusic();
+            bool memeDeckCheck = StartGame.deckSettingMeme();
 
             if(gameDeckCheck == true)
             {
@@ -272,14 +271,14 @@ namespace Memory_Project
                     pic.Image = Properties.Resources.CoverG;
                 }
             }
-            if (musicDeckCheck == true)
+            else if (musicDeckCheck == true)
             {
                 foreach (var pic in PictureBoxes)
                 {
                     pic.Image = Properties.Resources.CoverM;
                 }
             }
-            if (memeDeckCheck == true)
+            else if (memeDeckCheck == true)
             {
                 foreach (var pic in PictureBoxes)
                 {
