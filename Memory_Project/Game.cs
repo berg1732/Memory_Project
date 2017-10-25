@@ -129,7 +129,6 @@ namespace Memory_Project
         /// </summary>
         private PictureBox[] PictureBoxes
         {
-            
             get { return this.Controls.OfType<PictureBox>().ToArray(); }
         }
 
@@ -452,7 +451,9 @@ namespace Memory_Project
             }
         }
         /// <summary>
-        /// do not touch
+        /// Button load game
+        /// Voor elke line(1t/m16) set picturebox.ImageLocation
+        /// Laaste vijf lines voor speler + score + beurt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

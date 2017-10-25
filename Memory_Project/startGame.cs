@@ -32,7 +32,7 @@ namespace Memory_Project
                     // Een nieuwe instance aan maken. (Game Class)
                     Game Game = new Game(this);
 
-                    // De Game laten weergeven
+                    // Multiplayer game laten weergeven
                     Game.Show();
                 }
             
@@ -41,19 +41,28 @@ namespace Memory_Project
         private void buttonSingleplayer_Click(object sender, EventArgs e)
         {
             {
-                singleGame singleGame = new singleGame();
+                // Een nieuwe instance aan maken. (singleGame Class)
+                singleGame singleGame = new singleGame(this);
 
+                // Singleplayer game laten weergeven
                 singleGame.Show();
             }
         }
 
         private void buttonLeaderboard_Click(object sender, EventArgs e)
         {
+            // Een nieuwe instance aan maken. (scoreGame Class)
             scoreGame scoreGame = new scoreGame();
 
+            //Scoreboard laten weergeven
             scoreGame.Show();
         }
 
+        /// <summary>
+        /// Checked of unchecked
+        /// </summary>
+        /// <param name="sender = unchecked"></param>
+        /// <param name="e as temp"></param>
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // uncheck 
@@ -63,6 +72,10 @@ namespace Memory_Project
             temp.CheckState = CheckState.Checked;
         }
 
+        /// <summary>
+        /// Kijken of deck game is aangevinked
+        /// </summary>
+        /// <returns>gameToolStripMenuItem.Checked = true or false</returns>
         public bool deckSettingGame()
         {
             if (this.gameToolStripMenuItem.Checked)
@@ -75,6 +88,10 @@ namespace Memory_Project
             }
         }
 
+        /// <summary>
+        /// Kijken of deck music is aangevinked
+        /// </summary>
+        /// <returns>musicToolStripMenuItem.Checked = true or false</returns>
         public bool deckSettingMusic()
         {
             if (this.musicToolStripMenuItem.Checked)
@@ -87,6 +104,10 @@ namespace Memory_Project
             }
         }
 
+        /// <summary>
+        /// Kijken of deck meme is aangevinked
+        /// </summary>
+        /// <returns>memeToolStripMenuItem.Checked = true or false</returns>
         public bool deckSettingMeme()
         {
             if (this.memeToolStripMenuItem.Checked)

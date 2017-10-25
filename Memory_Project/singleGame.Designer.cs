@@ -40,14 +40,14 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(917, 42);
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(611, 27);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
             this.lblTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTime.Size = new System.Drawing.Size(71, 30);
+            this.lblTime.Size = new System.Drawing.Size(55, 24);
             this.lblTime.TabIndex = 16;
             this.lblTime.Text = "00:00";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // timer
             // 
@@ -56,10 +56,11 @@
             // lblShowImages
             // 
             this.lblShowImages.AutoSize = true;
-            this.lblShowImages.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowImages.Location = new System.Drawing.Point(963, 75);
+            this.lblShowImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowImages.Location = new System.Drawing.Point(642, 49);
+            this.lblShowImages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblShowImages.Name = "lblShowImages";
-            this.lblShowImages.Size = new System.Drawing.Size(26, 30);
+            this.lblShowImages.Size = new System.Drawing.Size(20, 24);
             this.lblShowImages.TabIndex = 17;
             this.lblShowImages.Text = "0";
             // 
@@ -72,13 +73,13 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.Black;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Broadway", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReset.Location = new System.Drawing.Point(669, 42);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReset.Location = new System.Drawing.Point(446, 27);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnReset.Size = new System.Drawing.Size(129, 65);
+            this.btnReset.Size = new System.Drawing.Size(86, 42);
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -86,22 +87,21 @@
             // 
             // singleGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1008, 1038);
+            this.ClientSize = new System.Drawing.Size(672, 675);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblShowImages);
             this.Controls.Add(this.lblTime);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "singleGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory Game";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.singleGame_FormClosed);
-            this.Load += new System.EventHandler(this.singleGame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
