@@ -23,6 +23,7 @@ namespace Memory_Project
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.decksToolStripMenuItem;
+            
         }
 
         private void buttonMultiplayer_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace Memory_Project
 
             scoreGame.Show();
         }
+
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // uncheck 
@@ -60,5 +62,42 @@ namespace Memory_Project
             // check 
             temp.CheckState = CheckState.Checked;
         }
+
+        public bool deckSettingGame()
+        {
+            if (this.gameToolStripMenuItem.CheckOnClick)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool deckSettingMusic()
+        {
+            if (this.musicToolStripMenuItem.CheckOnClick)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool deckSettingMeme()
+        {
+            if (this.memeToolStripMenuItem.CheckOnClick)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

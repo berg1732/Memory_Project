@@ -71,6 +71,26 @@ namespace Memory_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CoverM {
+            get {
+                object obj = ResourceManager.GetObject("CoverM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CoverMm {
+            get {
+                object obj = ResourceManager.GetObject("CoverMm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icon {
@@ -83,6 +103,8 @@ namespace Memory_Project.Properties {
         /// <summary>
         ///   Looks up a localized string similar to speler 1   00:31 points
         ///speler 1  :  00:43 time
+        ///speler 1  :  00:24 time
+        ///speler 1  :  00:25 time
         ///.
         /// </summary>
         internal static string scoreboard {

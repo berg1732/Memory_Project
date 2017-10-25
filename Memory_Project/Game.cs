@@ -11,7 +11,6 @@ using Microsoft.VisualBasic;
 using System.IO;
 namespace Memory_Project
 {
-    
     /// <summary>
     /// Formulier voor het speelveld voor multiplayer games op dezelfde pc
     /// </summary>
@@ -28,13 +27,13 @@ namespace Memory_Project
         int scoreP1 = 0;
         int scoreP2 = 0;
         int WinningScore;
-       
+
+        
         public Game()
         {
             
             InitializeComponent();
-            
-            
+
             naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
             naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
@@ -44,9 +43,9 @@ namespace Memory_Project
             setPictureBoxes();
             setRandomImages();
             timerShowImages.Start();
-
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
+
         }
 
         private void setPictureBoxes()
@@ -94,16 +93,62 @@ namespace Memory_Project
         {
             get
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
-                var result = new List<Image>();
-                var list = Directory.GetFiles(path, "*.jpg");
-                foreach (var item in list)
+                startGame startGame = new startGame();
+                bool gameDeckCheck = startGame.deckSettingGame();
+                bool musicDeckCheck = startGame.deckSettingMusic();
+                bool memeDeckCheck = startGame.deckSettingMeme();
+                if (gameDeckCheck == true)
                 {
-                    var img = Image.FromFile(item);
-                    img.Tag = item;
-                    result.Add(img);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
                 }
-                return result;
+                if (musicDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                if (memeDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                else
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
             }
         }
         /// <summary>
@@ -166,10 +211,40 @@ namespace Memory_Project
         /// </summary>
         private void hideImages()
         {
-            foreach (var pic in PictureBoxes)
+            startGame startGame = new startGame();
+            bool gameDeckCheck = startGame.deckSettingGame();
+            bool musicDeckCheck = startGame.deckSettingMusic();
+            bool memeDeckCheck = startGame.deckSettingMeme();
+
+            if(gameDeckCheck == true)
             {
-                pic.Image = Properties.Resources.CoverG;
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverG;
+                }
             }
+            if (musicDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverM;
+                }
+            }
+            if (memeDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
+            }
+            else
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
+            }
+
         }
         
         /// <summary>
