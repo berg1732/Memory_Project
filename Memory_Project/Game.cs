@@ -106,10 +106,8 @@ namespace Memory_Project
 
                     pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
                 }
-                
 
-                
-
+                pictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 i++;
             }
@@ -229,7 +227,6 @@ namespace Memory_Project
             foreach (var pic in PictureBoxes)
             {
                 pic.Image = (Image)pic.Tag;
-
             }
         }
 
@@ -328,7 +325,6 @@ namespace Memory_Project
                     {
                         box.Image = image;
                     }
-
                 }
             }
         }
