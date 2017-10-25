@@ -30,7 +30,7 @@ namespace Memory_Project
         {
                 {
                     // Een nieuwe instance aan maken. (Game Class)
-                    Game Game = new Game();
+                    Game Game = new Game(this);
 
                     // De Game laten weergeven
                     Game.Show();
