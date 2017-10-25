@@ -30,7 +30,7 @@ namespace Memory_Project
         {
                 {
                     // Een nieuwe instance aan maken. (Game Class)
-                    Game Game = new Game(this);
+                    Game Game = new Game();
 
                     // De Game laten weergeven
                     Game.Show();
@@ -65,7 +65,7 @@ namespace Memory_Project
 
         public bool deckSettingGame()
         {
-            if (this.gameToolStripMenuItem.CheckOnClick)
+            if (this.gameToolStripMenuItem.Checked)
             {
                 return true;
             }
@@ -77,7 +77,7 @@ namespace Memory_Project
 
         public bool deckSettingMusic()
         {
-            if (this.musicToolStripMenuItem.CheckOnClick)
+            if (this.musicToolStripMenuItem.Checked)
             {
                 return true;
             }
@@ -89,7 +89,7 @@ namespace Memory_Project
 
         public bool deckSettingMeme()
         {
-            if (this.memeToolStripMenuItem.CheckOnClick)
+            if (this.memeToolStripMenuItem.Checked)
             {
                 return true;
             }
