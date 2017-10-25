@@ -88,11 +88,11 @@ namespace Memory_Project
                     {
                         pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
                     }
-                    if (musicDeckCheck == true)
+                    else if (musicDeckCheck == true)
                     {
                         pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
                     }
-                    if (memeDeckCheck == true)
+                    else if (memeDeckCheck == true)
                     {
                         pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
                     }
