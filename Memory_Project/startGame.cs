@@ -28,13 +28,30 @@ namespace Memory_Project
 
         private void buttonMultiplayer_Click(object sender, EventArgs e)
         {
+            {
+                // Een nieuwe instance aan maken. (Game Class)
+                Game Game = new Game(this);
+                 
+                if(gameToolStripMenuItem.Checked == true)
                 {
-                    // Een nieuwe instance aan maken. (Game Class)
-                    Game Game = new Game(this);
-
-                    // Multiplayer game laten weergeven
-                    Game.Show();
+                    Game.BackColor = Color.SkyBlue;
                 }
+                else if (musicToolStripMenuItem.Checked == true)
+                {
+                    Game.BackColor = Color.DarkRed;
+                }
+                else if (memeToolStripMenuItem.Checked == true)
+                {
+                    Game.BackColor = Color.DarkOrange;
+                }
+                else
+                {
+                    Game.BackColor = Color.DarkOrange;
+                }
+
+                // Multiplayer game laten weergeven
+                Game.Show();
+            }
             
         }
 
@@ -43,6 +60,23 @@ namespace Memory_Project
             {
                 // Een nieuwe instance aan maken. (singleGame Class)
                 singleGame singleGame = new singleGame(this);
+
+                if (gameToolStripMenuItem.Checked == true)
+                {
+                    singleGame.BackColor = Color.SkyBlue;
+                }
+                else if (musicToolStripMenuItem.Checked == true)
+                {
+                    singleGame.BackColor = Color.DarkRed;
+                }
+                else if (memeToolStripMenuItem.Checked == true)
+                {
+                    singleGame.BackColor = Color.DarkOrange;
+                }
+                else
+                {
+                    singleGame.BackColor = Color.DarkOrange;
+                }
 
                 // Singleplayer game laten weergeven
                 singleGame.Show();
