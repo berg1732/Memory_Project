@@ -242,11 +242,26 @@ namespace Memory_Project
                 pic.Tag = null;
                 pic.Visible = true;
             }
+
+            // Score reset
             scoreP1 = 0;
             scoreP2 = 0;
+            lblScoreP1.Text = naamP1 + ": " + scoreP1;
+            lblScoreP2.Text = naamP2 + ": " + scoreP2;
+
+            // Speler aan de beurt reset
+            lblTurn.Text = naamP1 + " is aan de beurt";
+
+            // Images verbergen
             hideImages();
+
+            // Flash timer reset
             lblShowImages.Text = "5";
+
+            // Images random setten
             setRandomImages();
+
+            // Flash timer starten
             timerShowImages.Start();
         }
 
