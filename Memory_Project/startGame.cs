@@ -31,7 +31,8 @@ namespace Memory_Project
             {
                 // Een nieuwe instance aan maken. (Game Class)
                 Game Game = new Game(this);
-                 
+                
+                // Background color per deck
                 if(gameToolStripMenuItem.Checked == true)
                 {
                     Game.BackColor = Color.SkyBlue;
@@ -61,6 +62,7 @@ namespace Memory_Project
                 // Een nieuwe instance aan maken. (singleGame Class)
                 singleGame singleGame = new singleGame(this);
 
+                // Background color per deck
                 if (gameToolStripMenuItem.Checked == true)
                 {
                     singleGame.BackColor = Color.SkyBlue;
