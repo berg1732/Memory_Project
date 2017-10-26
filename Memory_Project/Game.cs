@@ -441,7 +441,7 @@ namespace Memory_Project
                 foreach (var picBox in PictureBoxes)    // Voor elke Picturebox doe...
                 {
                     Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
-                    file.WriteLine(bitmap.Tag);         // Pictureboxes saven
+                    file.WriteLine(bitmap.Tag + "|" + picBox.Location);         // Pictureboxes saven
                 }
                 file.WriteLine(naamP1.ToString());      // Naam speler 1
                 file.WriteLine(scoreP1.ToString());     // Score speler 1
@@ -470,18 +470,33 @@ namespace Memory_Project
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
+                for (int i = 0; i < PictureBoxes.Count(); i++)
+                {
+                    //PictureBoxes[i] = null;
+                }
+                
                 try
                 {
                     if ((myStream = openFile.OpenFile()) != null)
                     {
                         using (StreamReader reader = new StreamReader(myStream))
                         {
+                            
                             string line;
+                            string[] sline;
+                            string[] pline;
                             foreach (var pic in PictureBoxes) // Voor elke Picturebox doe dan..
                             {
                                 line = reader.ReadLine();   // Lees de lines in bestand
-                                pic.ImageLocation = line;   // Zet line naar picturebox.imageLocation
-                                //showImages(); <- is om te testen of loading picturebox images werkt
+                                sline = line.Split('|');
+                                pline = sline[1].Split(',');
+                                pline[1]=pline[1].Replace("}", string.Empty);
+                                pic.ImageLocation = sline[0];   // Zet line naar picturebox.imageLocation
+                                int x = Int32.Parse(pline[0].Split('=')[1]);
+                                int y = Int32.Parse(pline[1].Split('=')[1]);
+                                pic.Tag = Image.FromFile(sline[0]);
+                                pic.Location = new Point(x, y);
+                                //showImages(); //<- is om te testen of loading picturebox images werkt
                             }
                         }
                     }
