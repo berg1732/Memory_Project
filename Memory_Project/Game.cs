@@ -347,6 +347,8 @@ namespace Memory_Project
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
                 pic.Visible = firstGuess.Visible = false;
+                pic.Tag = null;
+                firstGuess.Tag = null;
                 {
                     firstGuess = pic;
                 }
@@ -440,9 +442,14 @@ namespace Memory_Project
 
                 foreach (var picBox in PictureBoxes)    // Voor elke Picturebox doe...
                 {
-                    Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
-                    file.WriteLine(bitmap.Tag + "|" + picBox.Location);         // Pictureboxes saven
+                    if (picBox.Tag != null)
+                    {
+                        Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
+                        file.WriteLine(bitmap.Tag + "|" + picBox.Location);         // Pictureboxes saven
+                    }
+
                 }
+                file.WriteLine("asdfghjklqwertyuiop");
                 file.WriteLine(naamP1.ToString());      // Naam speler 1
                 file.WriteLine(scoreP1.ToString());     // Score speler 1
                 file.WriteLine(naamP2.ToString());      // Naam speler 2
@@ -459,6 +466,10 @@ namespace Memory_Project
         /// <param name="e"></param>
         private void button_LoadGame_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < PictureBoxes.Count(); i++)
+            {
+                PictureBoxes[i] = null;
+            }
             Stream myStream = null;
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/savefiles/");
 
@@ -470,10 +481,6 @@ namespace Memory_Project
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                for (int i = 0; i < PictureBoxes.Count(); i++)
-                {
-                    //PictureBoxes[i] = null;
-                }
                 
                 try
                 {
@@ -485,17 +492,20 @@ namespace Memory_Project
                             string line;
                             string[] sline;
                             string[] pline;
-                            foreach (var pic in PictureBoxes) // Voor elke Picturebox doe dan..
+                            line = reader.ReadLine();   // Lees de lines in bestand
+                            int c = 0;
+                            while (line != "asdfghjklqwertyuiop") // Voor elke Picturebox doe dan..
                             {
-                                line = reader.ReadLine();   // Lees de lines in bestand
                                 sline = line.Split('|');
                                 pline = sline[1].Split(',');
                                 pline[1]=pline[1].Replace("}", string.Empty);
-                                pic.ImageLocation = sline[0];   // Zet line naar picturebox.imageLocation
+                                PictureBoxes[c].ImageLocation = sline[0];   // Zet line naar picturebox.imageLocation
                                 int x = Int32.Parse(pline[0].Split('=')[1]);
                                 int y = Int32.Parse(pline[1].Split('=')[1]);
-                                pic.Tag = Image.FromFile(sline[0]);
-                                pic.Location = new Point(x, y);
+                                PictureBoxes[c].Tag = Image.FromFile(sline[0]);
+                                PictureBoxes[c].Location = new Point(x, y);
+                                line = reader.ReadLine();   // Lees de lines in bestand
+                                c++;
                                 //showImages(); //<- is om te testen of loading picturebox images werkt
                             }
                         }
