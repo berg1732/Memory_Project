@@ -23,23 +23,23 @@ namespace Memory_Project
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
         int ticks = 0;
-        public singleGame()
+        private startGame StartGame;
+
+        public singleGame(startGame ParentForm)
         {
             InitializeComponent();
-            naam = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+            this.StartGame = ParentForm;
 
+            naam = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
 
             setPictureBoxes();
             setRandomImages();
-
 
             lblShowImages.Text = "5";
             timerShowImages.Start();
 
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
-
-            
            
             //sp.PlayLooping();
             sp.Play();
@@ -57,7 +57,36 @@ namespace Memory_Project
                 pictureBox[i].Size = new Size(100, 150);
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
-                pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+
+                if (StartGame != null)
+                {
+                    bool gameDeckCheck = StartGame.deckSettingGame();
+                    bool musicDeckCheck = StartGame.deckSettingMusic();
+                    bool memeDeckCheck = StartGame.deckSettingMeme();
+                    if (gameDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+                    }
+                    else if (musicDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
+                    }
+                    else if (memeDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
+                    else
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
+                }
+                else
+                {
+
+                    pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                }
+
+                pictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 i++;
             }
@@ -84,20 +113,65 @@ namespace Memory_Project
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-        private static IEnumerable<Image> Images
+        private IEnumerable<Image> Images
         {
             get
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
-                var result = new List<Image>();
-                var list = System.IO.Directory.GetFiles(path, "*.jpg");
-                foreach (var item in list)
+                bool gameDeckCheck = StartGame.deckSettingGame();
+                bool musicDeckCheck = StartGame.deckSettingMusic();
+                bool memeDeckCheck = StartGame.deckSettingMeme();
+                if (gameDeckCheck == true)
                 {
-                    var img = Image.FromFile(item);
-                    img.Tag = item;
-                    result.Add(img);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
                 }
-                return result;
+                else if (musicDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                else if (memeDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                else
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
             }
         }
 
@@ -173,13 +247,42 @@ namespace Memory_Project
         }
 
         /// <summary>
-        /// Image verbergen via CoverG
+        /// Image verbergen via Cover+ deckkeuze
         /// </summary>
         private void hideImages()
         {
-            foreach (var pic in PictureBoxes)
+    
+            bool gameDeckCheck = StartGame.deckSettingGame();
+            bool musicDeckCheck = StartGame.deckSettingMusic();
+            bool memeDeckCheck = StartGame.deckSettingMeme();
+
+            if (gameDeckCheck == true)
             {
-                pic.Image = Properties.Resources.CoverG;
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverG;
+                }
+            }
+            else if (musicDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverM;
+                }
+            }
+            else if (memeDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
+            }
+            else
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
             }
         }
 
@@ -288,16 +391,6 @@ namespace Memory_Project
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetImages();
-        }
-
-        private void singleGame_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTime_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void singleGame_FormClosed(object sender, FormClosedEventArgs e)

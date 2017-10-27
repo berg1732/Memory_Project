@@ -11,7 +11,6 @@ using Microsoft.VisualBasic;
 using System.IO;
 namespace Memory_Project
 {
-    
     /// <summary>
     /// Formulier voor het speelveld voor multiplayer games op dezelfde pc
     /// </summary>
@@ -28,13 +27,13 @@ namespace Memory_Project
         int scoreP1 = 0;
         int scoreP2 = 0;
         int WinningScore;
-       
+        private startGame StartGame;
+        
         public Game()
         {
             
             InitializeComponent();
-            
-            
+
             naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
             naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
@@ -44,7 +43,25 @@ namespace Memory_Project
             setPictureBoxes();
             setRandomImages();
             timerShowImages.Start();
+            clickTimer.Interval = 1000;
+            clickTimer.Tick += clickTimer_Tick;
 
+        }
+        public Game(startGame ParentForm)
+        {
+
+            InitializeComponent();
+            this.StartGame = ParentForm;
+
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
+            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
+            lblScoreP1.Text = naamP1 + ": " + scoreP1;
+            lblScoreP2.Text = naamP2 + ": " + scoreP2;
+            lblTurn.Text = naamP1 + " is aan de beurt";
+            lblShowImages.Text = "5";
+            setPictureBoxes();
+            setRandomImages();
+            timerShowImages.Start();
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
         }
@@ -61,7 +78,36 @@ namespace Memory_Project
                 pictureBox[i].Size = new Size(100, 150);
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
-                pictureBox[i].ImageLocation = (path +"CoverG"+".jpg");
+
+                if (StartGame != null)
+                {
+                    bool gameDeckCheck = StartGame.deckSettingGame();
+                    bool musicDeckCheck = StartGame.deckSettingMusic();
+                    bool memeDeckCheck = StartGame.deckSettingMeme();
+                    if (gameDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverG" + ".jpg");
+                    }
+                    else if (musicDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverM" + ".jpg");
+                    }
+                    else if (memeDeckCheck == true)
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
+                    else
+                    {
+                        pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                    }
+                }
+                else
+                {
+
+                    pictureBox[i].ImageLocation = (path + "CoverMm" + ".jpg");
+                }
+
+                pictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox[i].MouseClick += new MouseEventHandler(clickImage);
                 i++;
             }
@@ -83,27 +129,71 @@ namespace Memory_Project
         /// </summary>
         private PictureBox[] PictureBoxes
         {
-            
             get { return this.Controls.OfType<PictureBox>().ToArray(); }
         }
 
         /// <summary>
         /// Images uit de resources map halen
         /// </summary>
-        private static IEnumerable<Image> Images
+        private  IEnumerable<Image> Images
         {
             get
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
-                var result = new List<Image>();
-                var list = Directory.GetFiles(path, "*.jpg");
-                foreach (var item in list)
+                bool gameDeckCheck = StartGame.deckSettingGame();
+                bool musicDeckCheck = StartGame.deckSettingMusic();
+                bool memeDeckCheck = StartGame.deckSettingMeme();
+                if (gameDeckCheck == true)
                 {
-                    var img = Image.FromFile(item);
-                    img.Tag = item;
-                    result.Add(img);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
                 }
-                return result;
+                else if (musicDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                else if (memeDeckCheck == true)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
+                else
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var result = new List<Image>();
+                    var list = Directory.GetFiles(path, "*.jpg");
+                    foreach (var item in list)
+                    {
+                        var img = Image.FromFile(item);
+                        img.Tag = item;
+                        result.Add(img);
+                    }
+                    return result;
+                }
             }
         }
         /// <summary>
@@ -136,7 +226,6 @@ namespace Memory_Project
             foreach (var pic in PictureBoxes)
             {
                 pic.Image = (Image)pic.Tag;
-
             }
         }
 
@@ -153,11 +242,26 @@ namespace Memory_Project
                 pic.Tag = null;
                 pic.Visible = true;
             }
+
+            // Score reset
             scoreP1 = 0;
             scoreP2 = 0;
+            lblScoreP1.Text = naamP1 + ": " + scoreP1;
+            lblScoreP2.Text = naamP2 + ": " + scoreP2;
+
+            // Speler aan de beurt reset
+            lblTurn.Text = naamP1 + " is aan de beurt";
+
+            // Images verbergen
             hideImages();
+
+            // Flash timer reset
             lblShowImages.Text = "5";
+
+            // Images random setten
             setRandomImages();
+
+            // Flash timer starten
             timerShowImages.Start();
         }
 
@@ -166,10 +270,40 @@ namespace Memory_Project
         /// </summary>
         private void hideImages()
         {
-            foreach (var pic in PictureBoxes)
+
+            bool gameDeckCheck = StartGame.deckSettingGame();
+            bool musicDeckCheck = StartGame.deckSettingMusic();
+            bool memeDeckCheck = StartGame.deckSettingMeme();
+
+            if(gameDeckCheck == true)
             {
-                pic.Image = Properties.Resources.CoverG;
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverG;
+                }
             }
+            else if (musicDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverM;
+                }
+            }
+            else if (memeDeckCheck == true)
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
+            }
+            else
+            {
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.CoverMm;
+                }
+            }
+
         }
         
         /// <summary>
@@ -205,7 +339,6 @@ namespace Memory_Project
                     {
                         box.Image = image;
                     }
-
                 }
             }
         }
@@ -229,6 +362,8 @@ namespace Memory_Project
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
                 pic.Visible = firstGuess.Visible = false;
+                pic.Tag = null;
+                firstGuess.Tag = null;
                 {
                     firstGuess = pic;
                 }
@@ -322,9 +457,14 @@ namespace Memory_Project
 
                 foreach (var picBox in PictureBoxes)    // Voor elke Picturebox doe...
                 {
-                    Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
-                    file.WriteLine(bitmap.Tag);         // Pictureboxes saven
+                    if (picBox.Tag != null)
+                    {
+                        Bitmap bitmap = (Bitmap)picBox.Tag; // Pictureboxes ophalen
+                        file.WriteLine(bitmap.Tag + "|" + picBox.Location);         // Pictureboxes saven
+                    }
+
                 }
+                file.WriteLine("asdfghjklqwertyuiop");
                 file.WriteLine(naamP1.ToString());      // Naam speler 1
                 file.WriteLine(scoreP1.ToString());     // Score speler 1
                 file.WriteLine(naamP2.ToString());      // Naam speler 2
@@ -333,12 +473,18 @@ namespace Memory_Project
             }
         }
         /// <summary>
-        /// do not touch
+        /// Button load game
+        /// Voor elke line(1t/m16) set picturebox.ImageLocation
+        /// Laaste vijf lines voor speler + score + beurt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button_LoadGame_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < PictureBoxes.Count(); i++)
+            {
+                PictureBoxes[i] = null;
+            }
             Stream myStream = null;
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/savefiles/");
 
@@ -350,23 +496,36 @@ namespace Memory_Project
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
+                
                 try
                 {
                     if ((myStream = openFile.OpenFile()) != null)
                     {
                         using (StreamReader reader = new StreamReader(myStream))
                         {
+                            
                             string line;
-                            foreach (var pic in PictureBoxes) // Voor elke Picturebox doe dan..
+                            string[] sline;
+                            string[] pline;
+                            line = reader.ReadLine();   // Lees de lines in bestand
+                            int c = 0;
+                            while (line != "asdfghjklqwertyuiop") // Voor elke Picturebox doe dan..
                             {
+                                sline = line.Split('|');
+                                pline = sline[1].Split(',');
+                                pline[1]=pline[1].Replace("}", string.Empty);
+                                PictureBoxes[c].ImageLocation = sline[0];   // Zet line naar picturebox.imageLocation
+                                int x = Int32.Parse(pline[0].Split('=')[1]);
+                                int y = Int32.Parse(pline[1].Split('=')[1]);
+                                PictureBoxes[c].Tag = Image.FromFile(sline[0]);
+                                PictureBoxes[c].Location = new Point(x, y);
                                 line = reader.ReadLine();   // Lees de lines in bestand
-                                pic.ImageLocation = line;   // Zet line naar picturebox.imageLocation
-                                //showImages(); <- is om te testen of loading picturebox images werkt
+                                c++;
+                                //showImages(); //<- is om te testen of loading picturebox images werkt
                             }
                         }
                     }
                     List<string> text = File.ReadLines(openFile.FileName).Reverse().Take(5).ToList();
-                    int q = 1;
                     naamP2 = text[2];
                     scoreP2 = Int32.Parse(text[1]);
                     scoreP1 = Int32.Parse(text[3]);
@@ -377,11 +536,6 @@ namespace Memory_Project
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + error.Message);
                 }
             }
-        }
-
-        private void Game_Load(object sender, EventArgs e)
-        {
-
         }
     }
 
