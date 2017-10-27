@@ -37,9 +37,13 @@ namespace Memory_Project
             {
                 string[] s = line.Split(':');
                 text +=  line + Environment.NewLine ;
-                if (dic.ContainsKey(s[0]))
+                foreach (var k in dic.Keys)
                 {
-                    dic[s[0]].Add(Int32.Parse(s[1]));
+                    dic[k].Sort();
+                    if (dic.ContainsKey(s[0]))
+                    {
+                        dic[s[0]].Add(Int32.Parse(s[1]));
+                    }
                 }
             }
             var d = dic;
