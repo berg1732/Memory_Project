@@ -75,21 +75,23 @@ namespace Memory_Project
                     }
                 }
                 textMulti += line + Environment.NewLine;
-                if (dic.ContainsKey(s[0]))
-                {
-                    dic[s[0]].Add(Int32.Parse(s[1]));
-                }
-                else
-                {
-                    dic.Add(s[0], new List<int>());
 
-                    dic[s[0]].Add(Int32.Parse(s[1]));
+                foreach (var k in dic.Keys)
+                {
+                    dic[k].Sort();
+                    if (dic.ContainsKey(s[0]))
+                    {
+                        dic[s[0]].Add(Int32.Parse(s[1]));
+                    }
+                    else
+                    {
+                        dic.Add(s[0], new List<int>());
+
+                        dic[s[0]].Add(Int32.Parse(s[1]));
+                    }
                 }
             }
-            foreach (var k in dic.Keys)
-            {
-                dic[k].Sort();
-            }
+           
             var d = dic;
             foreach (var item in dic)
             {
