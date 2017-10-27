@@ -63,6 +63,36 @@ namespace Memory_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Achtergrond {
+            get {
+                object obj = ResourceManager.GetObject("Achtergrond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Achtergrond1 {
+            get {
+                object obj = ResourceManager.GetObject("Achtergrond1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Achtergrond2 {
+            get {
+                object obj = ResourceManager.GetObject("Achtergrond2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CoverG {
             get {
                 object obj = ResourceManager.GetObject("CoverG", resourceCulture);
@@ -101,10 +131,17 @@ namespace Memory_Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to speler 1   00:31 points
-        ///speler 1  :  00:43 time
-        ///speler 1  :  00:24 time
-        ///speler 1  :  00:25 time
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logovanons {
+            get {
+                object obj = ResourceManager.GetObject("Logovanons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to speler 1  :  00:11 time
         ///.
         /// </summary>
         internal static string scoreboard {

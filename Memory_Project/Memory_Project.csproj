@@ -150,6 +150,10 @@
     <None Include="Resources\deck\CardG1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Achtergrond.png" />
+    <None Include="Resources\Achtergrond1.png" />
+    <None Include="Resources\Achtergrond2.png" />
+    <None Include="Resources\Achtergrond3.png" />
     <Content Include="Resources\Achtergrondgeluid.wav" />
     <Content Include="Resources\CoverM.jpg" />
     <Content Include="Resources\CoverMm.jpg" />
@@ -169,6 +173,7 @@
     <Content Include="Resources\deckmm\CardMm6.jpg" />
     <Content Include="Resources\deckmm\CardMm7.jpg" />
     <Content Include="Resources\deckmm\CardMm8.jpg" />
+    <None Include="Resources\Logovanons.png" />
     <Content Include="Resources\scoreboard.txt" />
     <Content Include="Resources\scoreboardMulti.txt" />
   </ItemGroup>

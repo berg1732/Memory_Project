@@ -38,6 +38,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.button_SaveGame = new System.Windows.Forms.Button();
             this.button_LoadGame = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Cardsholder
@@ -65,46 +66,51 @@
             // lblTurn
             // 
             this.lblTurn.AutoSize = true;
-            this.lblTurn.Location = new System.Drawing.Point(442, 42);
+            this.lblTurn.Font = new System.Drawing.Font("Carter One", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.Location = new System.Drawing.Point(125, 9);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(117, 13);
+            this.lblTurn.Size = new System.Drawing.Size(229, 31);
             this.lblTurn.TabIndex = 19;
             this.lblTurn.Text = "speler 1 is aan de beurt";
             // 
             // lblScoreP1
             // 
             this.lblScoreP1.AutoSize = true;
+            this.lblScoreP1.Font = new System.Drawing.Font("Carter One", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreP1.Location = new System.Drawing.Point(444, 72);
             this.lblScoreP1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblScoreP1.Name = "lblScoreP1";
-            this.lblScoreP1.Size = new System.Drawing.Size(56, 13);
+            this.lblScoreP1.Size = new System.Drawing.Size(70, 20);
             this.lblScoreP1.TabIndex = 20;
             this.lblScoreP1.Text = "speler 1: 0";
             // 
             // lblScoreP2
             // 
             this.lblScoreP2.AutoSize = true;
+            this.lblScoreP2.Font = new System.Drawing.Font("Carter One", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreP2.Location = new System.Drawing.Point(444, 98);
             this.lblScoreP2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblScoreP2.Name = "lblScoreP2";
-            this.lblScoreP2.Size = new System.Drawing.Size(56, 13);
+            this.lblScoreP2.Size = new System.Drawing.Size(73, 20);
             this.lblScoreP2.TabIndex = 21;
             this.lblScoreP2.Text = "speler 2: 0";
             // 
             // btnReset
             // 
+            this.btnReset.Font = new System.Drawing.Font("Carter One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(454, 204);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(85, 29);
             this.btnReset.TabIndex = 22;
-            this.btnReset.Text = "Restart";
+            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // button_SaveGame
             // 
+            this.button_SaveGame.Font = new System.Drawing.Font("Carter One", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SaveGame.Location = new System.Drawing.Point(454, 253);
             this.button_SaveGame.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button_SaveGame.Name = "button_SaveGame";
@@ -116,6 +122,7 @@
             // 
             // button_LoadGame
             // 
+            this.button_LoadGame.Font = new System.Drawing.Font("Carter One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_LoadGame.Location = new System.Drawing.Point(454, 305);
             this.button_LoadGame.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button_LoadGame.Name = "button_LoadGame";
@@ -125,6 +132,16 @@
             this.button_LoadGame.UseVisualStyleBackColor = true;
             this.button_LoadGame.Click += new System.EventHandler(this.button_LoadGame_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Memory_Project.Properties.Resources.Logovanons;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.No;
+            this.panel1.Location = new System.Drawing.Point(531, 523);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(192, 140);
+            this.panel1.TabIndex = 25;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +149,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(735, 675);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_LoadGame);
             this.Controls.Add(this.button_SaveGame);
             this.Controls.Add(this.btnReset);
@@ -160,5 +178,6 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button button_SaveGame;
         private System.Windows.Forms.Button button_LoadGame;
+        private System.Windows.Forms.Panel panel1;
     }
 }

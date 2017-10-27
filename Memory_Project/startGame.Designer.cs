@@ -44,9 +44,10 @@
             // buttonMultiplayer
             // 
             this.buttonMultiplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonMultiplayer.Location = new System.Drawing.Point(387, 45);
+            this.buttonMultiplayer.Font = new System.Drawing.Font("Carter One", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMultiplayer.Location = new System.Drawing.Point(405, 41);
             this.buttonMultiplayer.Name = "buttonMultiplayer";
-            this.buttonMultiplayer.Size = new System.Drawing.Size(75, 23);
+            this.buttonMultiplayer.Size = new System.Drawing.Size(85, 23);
             this.buttonMultiplayer.TabIndex = 0;
             this.buttonMultiplayer.Text = "Multiplayer";
             this.buttonMultiplayer.UseVisualStyleBackColor = false;
@@ -55,9 +56,10 @@
             // buttonLeaderboard
             // 
             this.buttonLeaderboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonLeaderboard.Location = new System.Drawing.Point(387, 74);
+            this.buttonLeaderboard.Font = new System.Drawing.Font("Carter One", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLeaderboard.Location = new System.Drawing.Point(405, 70);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(85, 23);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
@@ -66,9 +68,10 @@
             // buttonSingleplayer
             // 
             this.buttonSingleplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSingleplayer.Location = new System.Drawing.Point(387, 16);
+            this.buttonSingleplayer.Font = new System.Drawing.Font("Carter One", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSingleplayer.Location = new System.Drawing.Point(405, 12);
             this.buttonSingleplayer.Name = "buttonSingleplayer";
-            this.buttonSingleplayer.Size = new System.Drawing.Size(75, 23);
+            this.buttonSingleplayer.Size = new System.Drawing.Size(85, 23);
             this.buttonSingleplayer.TabIndex = 2;
             this.buttonSingleplayer.Text = "Singleplayer";
             this.buttonSingleplayer.UseVisualStyleBackColor = false;
@@ -81,7 +84,7 @@
             this.settingsToolStripMenuItem});
             this.menuStripSettings.Location = new System.Drawing.Point(0, 0);
             this.menuStripSettings.Name = "menuStripSettings";
-            this.menuStripSettings.Size = new System.Drawing.Size(509, 24);
+            this.menuStripSettings.Size = new System.Drawing.Size(521, 26);
             this.menuStripSettings.TabIndex = 3;
             this.menuStripSettings.Text = "Settings";
             // 
@@ -89,8 +92,10 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.decksToolStripMenuItem});
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Carter One", 9F);
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // decksToolStripMenuItem
@@ -100,27 +105,27 @@
             this.musicToolStripMenuItem,
             this.memeToolStripMenuItem});
             this.decksToolStripMenuItem.Name = "decksToolStripMenuItem";
-            this.decksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.decksToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.decksToolStripMenuItem.Text = "Decks";
             // 
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // musicToolStripMenuItem
             // 
             this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
-            this.musicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.musicToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.musicToolStripMenuItem.Text = "Music";
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // memeToolStripMenuItem
             // 
             this.memeToolStripMenuItem.Name = "memeToolStripMenuItem";
-            this.memeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.memeToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.memeToolStripMenuItem.Text = "Meme";
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -128,8 +133,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Memory_Project.Properties.Resources.startFormBG;
-            this.ClientSize = new System.Drawing.Size(509, 511);
+            this.BackgroundImage = global::Memory_Project.Properties.Resources.Achtergrond2;
+            this.ClientSize = new System.Drawing.Size(521, 511);
             this.Controls.Add(this.buttonSingleplayer);
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.buttonMultiplayer);

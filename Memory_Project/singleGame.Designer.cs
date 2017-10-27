@@ -35,6 +35,7 @@
             this.lblShowImages = new System.Windows.Forms.Label();
             this.timerShowImages = new System.Windows.Forms.Timer(this.components);
             this.btnReset = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblTime
@@ -73,8 +74,8 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.Black;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReset.Font = new System.Drawing.Font("Carter One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(446, 27);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnReset.Name = "btnReset";
@@ -85,6 +86,16 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Memory_Project.Properties.Resources.Logovanons;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.No;
+            this.panel1.Location = new System.Drawing.Point(468, 523);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(192, 140);
+            this.panel1.TabIndex = 19;
+            // 
             // singleGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +103,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(672, 675);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblShowImages);
             this.Controls.Add(this.lblTime);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Panel panel1;
     }
 }

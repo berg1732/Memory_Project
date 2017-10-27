@@ -22,8 +22,8 @@ namespace Memory_Project
         private readonly Random random = new Random();
         private readonly Timer clickTimer = new Timer();
         PictureBox[] pictureBox = new PictureBox[50];
-        string naamP1 = "speler 1";
-        string naamP2 = "speler 2";
+        string naamP1 = "Speler 1";
+        string naamP2 = "Speler 2";
         int scoreP1 = 0;
         int scoreP2 = 0;
         int WinningScore;
@@ -34,8 +34,8 @@ namespace Memory_Project
             
             InitializeComponent();
 
-            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
-            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 1", -1, -1);
+            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
             lblScoreP2.Text = naamP2 + ": " + scoreP2;
             lblTurn.Text = naamP1 + " is aan de beurt";
@@ -53,8 +53,8 @@ namespace Memory_Project
             InitializeComponent();
             this.StartGame = ParentForm;
 
-            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 1", -1, -1);
-            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "speler 2", -1, -1);
+            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 1", -1, -1);
+            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
             lblScoreP2.Text = naamP2 + ": " + scoreP2;
             lblTurn.Text = naamP1 + " is aan de beurt";
