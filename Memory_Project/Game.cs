@@ -360,7 +360,7 @@ namespace Memory_Project
                 return;
             }
             pic.Image = (Image)pic.Tag;
-            if (pic.Image == firstGuess.Image && pic != firstGuess)
+            if (pic.ImageLocation == firstGuess.ImageLocation && pic != firstGuess)
             {
                 pic.Visible = firstGuess.Visible = false;
                 pic.Tag = null;
