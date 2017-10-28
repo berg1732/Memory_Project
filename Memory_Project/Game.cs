@@ -250,6 +250,7 @@ namespace Memory_Project
             lblScoreP2.Text = naamP2 + ": " + scoreP2;
 
             // Speler aan de beurt reset
+            turn = 0;
             lblTurn.Text = naamP1 + " is aan de beurt";
 
             // Images verbergen
@@ -381,6 +382,14 @@ namespace Memory_Project
             }
             else
             {
+                if (turn > 0)
+                {
+                    turn--;
+                }
+                else
+                {
+                    turn++;
+                }
                 switchTurns();
                 allowClick = false;
                 clickTimer.Start();
@@ -425,12 +434,12 @@ namespace Memory_Project
         {
             if (this.turn == 0)
             {
-                turn = 1;
+                turn = 0;
                 lblTurn.Text = naamP1 + " is aan de beurt";
             }
             else
             {
-                turn = 0;
+                turn = 1;
                 lblTurn.Text = naamP2 + " is aan de beurt";
             }
             
