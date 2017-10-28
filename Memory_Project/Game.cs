@@ -360,7 +360,46 @@ namespace Memory_Project
                 return;
             }
             pic.Image = (Image)pic.Tag;
-            if (pic.ImageLocation == firstGuess.ImageLocation && pic != firstGuess)
+            string picloc = pic.ImageLocation;
+            string[] picloca = picloc.Split('/');
+            if (picloca[picloca.Length -1 ][1] == 'o')
+            {
+                if (pic.Image == firstGuess.Image && pic != firstGuess)
+                {
+                    pic.Visible = firstGuess.Visible = false;
+                    pic.Tag = null;
+                    firstGuess.Tag = null;
+                    {
+                        firstGuess = pic;
+                    }
+                    if (this.turn == 0)
+                    {
+                        scoreP1++;
+                        lblScoreP1.Text = naamP1 + ": " + scoreP1;
+                    }
+                    else
+                    {
+                        scoreP2++;
+                        lblScoreP2.Text = naamP2 + ": " + scoreP2;
+                    }
+                    hideImages();
+                }
+                else
+                {
+                    if (turn > 0)
+                    {
+                        turn--;
+                    }
+                    else
+                    {
+                        turn++;
+                    }
+                    switchTurns();
+                    allowClick = false;
+                    clickTimer.Start();
+                }
+            }
+            else if (pic.ImageLocation == firstGuess.ImageLocation && pic != firstGuess)
             {
                 pic.Visible = firstGuess.Visible = false;
                 pic.Tag = null;
@@ -527,6 +566,7 @@ namespace Memory_Project
                                 int x = Int32.Parse(pline[0].Split('=')[1]);
                                 int y = Int32.Parse(pline[1].Split('=')[1]);
                                 PictureBoxes[c].Tag = Image.FromFile(sline[0]);
+                                PictureBoxes[c].Image.Tag = sline[0];
                                 PictureBoxes[c].Location = new Point(x, y);
                                 line = reader.ReadLine();   // Lees de lines in bestand
                                 c++;
