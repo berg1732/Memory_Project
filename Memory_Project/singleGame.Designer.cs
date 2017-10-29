@@ -74,9 +74,9 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.Black;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Carter One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(446, 27);
+            this.btnReset.Location = new System.Drawing.Point(446, 51);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
