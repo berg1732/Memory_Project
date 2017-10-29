@@ -453,7 +453,7 @@ namespace Memory_Project
 
             MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
             using (StreamWriter file =
-            new StreamWriter(@"../../Resources/scoreboardMulti.txt", true))
+            new StreamWriter(Directory.GetCurrentDirectory() + "../../../Resources/scoreboardMulti.txt", true))
             {
                 file.WriteLine(winPlayer+":   "+WinningScore+" points");
             }

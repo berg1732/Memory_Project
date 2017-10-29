@@ -4,3 +4,4 @@ Marco:   4 points
 Speler 1:   6 points
 Albert:   9 points
 Kris: 999 points
+aa:   5 points
