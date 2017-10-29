@@ -60,7 +60,7 @@ namespace Memory_Project
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/scoreboardMulti.txt");
             string[] lines = File.ReadAllLines(path);
             Dictionary<string, List<int>> dic = new Dictionary<string, List<int>>();
-
+            Dictionary<string, int> d = new Dictionary<string, int>();
 
             foreach (string line in lines)
             {
@@ -74,7 +74,17 @@ namespace Memory_Project
 
                     }
                 }
-                textMulti += line + Environment.NewLine;
+                if (dic.ContainsKey(s[0]))
+                {
+                    dic[s[0]].Add(Int32.Parse(s[1]));
+                }
+                else
+                {
+                    dic.Add(s[0], new List<int>());
+
+                    dic[s[0]].Add(Int32.Parse(s[1]));
+                }
+                //textMulti += line + Environment.NewLine;
 
                 foreach (var k in dic.Keys)
                 {
@@ -92,11 +102,28 @@ namespace Memory_Project
                 }
             }
            
-            var d = dic;
-            foreach (var item in dic)
+            foreach (var item in dic.Keys)
             {
-                var q = item;
+                string naam = item;
+                var highscore = 0;
+                foreach (var score in dic[item])
+                {
+                    if (highscore< score)
+                    {
+                        highscore = score;
+                    }
+                }
+                d.Add(naam, highscore);
+                //textMulti += naam + " " + ":" + highscore + Environment.NewLine;
 
+            }
+            List < KeyValuePair < string, int>> myList = d.ToList();
+
+            myList.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
+            myList.Reverse();
+            foreach (var item in myList)
+            {
+                textMulti += item.Key + " " + ":" + item.Value + Environment.NewLine;
             }
             multiScoreBox.Text = textMulti; // Score voor multiplayer
         }
