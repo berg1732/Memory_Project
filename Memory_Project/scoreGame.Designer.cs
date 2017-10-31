@@ -40,7 +40,7 @@
             // singleScoreBox
             // 
             this.singleScoreBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.singleScoreBox.Font = new System.Drawing.Font("Carter One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.singleScoreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.singleScoreBox.Location = new System.Drawing.Point(15, 59);
             this.singleScoreBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.singleScoreBox.Name = "singleScoreBox";
@@ -53,7 +53,7 @@
             // multiScoreBox
             // 
             this.multiScoreBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.multiScoreBox.Font = new System.Drawing.Font("Carter One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiScoreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiScoreBox.Location = new System.Drawing.Point(316, 58);
             this.multiScoreBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.multiScoreBox.Name = "multiScoreBox";
@@ -66,11 +66,11 @@
             // labelSingleScore
             // 
             this.labelSingleScore.AutoSize = true;
-            this.labelSingleScore.Font = new System.Drawing.Font("Carter One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSingleScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSingleScore.Location = new System.Drawing.Point(40, 35);
             this.labelSingleScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSingleScore.Name = "labelSingleScore";
-            this.labelSingleScore.Size = new System.Drawing.Size(154, 20);
+            this.labelSingleScore.Size = new System.Drawing.Size(184, 20);
             this.labelSingleScore.TabIndex = 2;
             this.labelSingleScore.Text = "Singleplayer HighScore";
             this.labelSingleScore.UseWaitCursor = true;
@@ -78,12 +78,12 @@
             // labelMultiScore
             // 
             this.labelMultiScore.AutoSize = true;
-            this.labelMultiScore.Font = new System.Drawing.Font("Carter One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMultiScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMultiScore.ForeColor = System.Drawing.Color.DarkOrange;
             this.labelMultiScore.Location = new System.Drawing.Point(341, 35);
             this.labelMultiScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMultiScore.Name = "labelMultiScore";
-            this.labelMultiScore.Size = new System.Drawing.Size(149, 20);
+            this.labelMultiScore.Size = new System.Drawing.Size(174, 20);
             this.labelMultiScore.TabIndex = 3;
             this.labelMultiScore.Text = "Multiplayer HighScore";
             this.labelMultiScore.UseWaitCursor = true;
@@ -101,7 +101,7 @@
             // 
             // scoreGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(536, 328);
@@ -118,7 +118,6 @@
             this.Name = "scoreGame";
             this.Text = "LeaderBoard";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.scoreGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

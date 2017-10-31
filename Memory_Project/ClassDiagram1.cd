@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Memory_Project.Game" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAiAAAAUSAGEAKBAAiEABAiCKIQBBAAAETAETADAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memory_Project.scoreGame" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAAAAAQAGAAgACAAAAAACIAAAgAAAAAAA=</HashCode>
+      <FileName>scoreGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memory_Project.singleGame" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAACAAUSAAEAKAAACGABQqCCYABBAAQASAkRADAAA=</HashCode>
+      <FileName>singleGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memory_Project.startGame" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgDAAIAAAjEAQAGAAAAAACAACCAAQCACAA=</HashCode>
+      <FileName>startGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

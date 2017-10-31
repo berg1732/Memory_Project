@@ -28,25 +28,9 @@ namespace Memory_Project
         int scoreP2 = 0;
         int WinningScore;
         private startGame StartGame;
-        
-        public Game()
-        {
-            
-            InitializeComponent();
-
-            naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 1", -1, -1);
-            naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 2", -1, -1);
-            lblScoreP1.Text = naamP1 + ": " + scoreP1;
-            lblScoreP2.Text = naamP2 + ": " + scoreP2;
-            lblTurn.Text = naamP1 + " is aan de beurt";
-            lblShowImages.Text = "5";
-            setPictureBoxes();
-            setRandomImages();
-            timerShowImages.Start();
-            clickTimer.Interval = 1000;
-            clickTimer.Tick += clickTimer_Tick;
-
-        }
+        /// <summary>
+        /// Constructor waarin het Parrent Form meegegeven word
+        /// </summary>
         public Game(startGame ParentForm)
         {
 
@@ -66,11 +50,14 @@ namespace Memory_Project
             clickTimer.Tick += clickTimer_Tick;
         }
 
+        /// <summary>
+        /// maakt de pictureboxes aan
+        /// </summary>
         private void setPictureBoxes()
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
             int i = 0;
-            while (i <= 16 -1)
+            while (i <= 16 - 1)
 
             {
                 pictureBox[i] = new PictureBox();
@@ -123,7 +110,7 @@ namespace Memory_Project
             Controls.AddRange(pictureBox);
         }
 
-    
+
         /// <summary>
         /// Methode voor algmeen Array PictureBox
         /// </summary>
@@ -463,12 +450,18 @@ namespace Memory_Project
             
         }
 
+        /// <summary>
+        /// verbergt afbeeldingen en zorgt dat allow click op true word gezet
+        /// </summary>
         private void clickTimer_Tick(object sender, EventArgs e)
         {
             hideImages();
             allowClick = true;
             clickTimer.Stop();
         }
+        /// <summary>
+        /// wisselt wie er aan de beurt is
+        /// </summary>
         private void switchTurns()
         {
             if (this.turn == 0)
@@ -481,10 +474,13 @@ namespace Memory_Project
                 turn = 1;
                 lblTurn.Text = naamP2 + " is aan de beurt";
             }
-            
+
 
         }
-        
+
+        /// <summary>
+        /// Reset het speelveld
+        /// </summary>
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetImages();

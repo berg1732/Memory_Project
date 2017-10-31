@@ -25,6 +25,9 @@ namespace Memory_Project
         int ticks = 0;
         private startGame StartGame;
 
+        /// <summary>
+        /// constructor voor het maaken van het speelveld
+        /// </summary>
         public singleGame(startGame ParentForm)
         {
             InitializeComponent();
@@ -40,11 +43,14 @@ namespace Memory_Project
 
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
-           
+
             //sp.PlayLooping();
             sp.Play();
-           
+
         }
+        /// <summary>
+        /// maakt de pictureboxes aan
+        /// </summary>
         private void setPictureBoxes()
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
@@ -198,6 +204,9 @@ namespace Memory_Project
 
         }
 
+        /// <summary>
+        /// show images Voor elke pic.image show image.tag
+        /// </summary>
         private void showImages()
         {
             foreach (var pic in PictureBoxes)
@@ -365,6 +374,9 @@ namespace Memory_Project
             resetImages();
         }
 
+        /// <summary>
+        /// verbergt afbeeldingen en zorgt dat allow click op true word gezet
+        /// </summary>
         private void clickTimer_Tick(object sender, EventArgs e)
         {
             hideImages();
@@ -388,11 +400,17 @@ namespace Memory_Project
             };
         }
 
+        /// <summary>
+        /// Reset het spelbord
+        /// </summary>
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetImages();
         }
 
+        /// <summary>
+        /// stopt de muziek
+        /// </summary>
         private void singleGame_FormClosed(object sender, FormClosedEventArgs e)
         {
             sp.Stop();

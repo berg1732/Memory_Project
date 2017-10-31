@@ -14,8 +14,11 @@ namespace Memory_Project
     public partial class scoreGame : Form
     {
         string text  = "", textMulti = "";
-        
 
+
+        /// <summary>
+        /// constructor voor het maken van het formulier
+        /// </summary>
         public scoreGame()
         {
             InitializeComponent();
@@ -126,10 +129,6 @@ namespace Memory_Project
                 textMulti += item.Key + " " + ":" + item.Value + Environment.NewLine;
             }
             multiScoreBox.Text = textMulti; // Score voor multiplayer
-        }
-        private void scoreGame_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

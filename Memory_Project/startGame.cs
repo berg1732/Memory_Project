@@ -16,6 +16,9 @@ namespace Memory_Project
     public partial class startGame : Form
     {
         private ToolStripMenuItem temp;
+        /// <summary>
+        /// constructor die het form aan maakt
+        /// </summary>
         public startGame()
         {
             InitializeComponent();
@@ -23,17 +26,20 @@ namespace Memory_Project
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.decksToolStripMenuItem;
-            
+
         }
 
+        /// <summary>
+        /// knop die een multiplayer game start
+        /// </summary>
         private void buttonMultiplayer_Click(object sender, EventArgs e)
         {
             {
                 // Een nieuwe instance aan maken. (Game Class)
                 Game Game = new Game(this);
-                
+
                 // Background color per deck
-                if(gameToolStripMenuItem.Checked == true)
+                if (gameToolStripMenuItem.Checked == true)
                 {
                     Game.BackColor = Color.SkyBlue;
                 }
@@ -53,9 +59,12 @@ namespace Memory_Project
                 // Multiplayer game laten weergeven
                 Game.Show();
             }
-            
+
         }
 
+        /// <summary>
+        /// knop die een singelplayer game start
+        /// </summary>
         private void buttonSingleplayer_Click(object sender, EventArgs e)
         {
             {
@@ -85,6 +94,9 @@ namespace Memory_Project
             }
         }
 
+        /// <summary>
+        /// knop die het leaderboard opent
+        /// </summary>
         private void buttonLeaderboard_Click(object sender, EventArgs e)
         {
             // Een nieuwe instance aan maken. (scoreGame Class)
