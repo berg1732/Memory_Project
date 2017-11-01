@@ -28,7 +28,6 @@ namespace Memory_Project
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.decksToolStripMenuItem;
 
-            this.x8MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             this.x6MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             this.x4MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.sizeToolStripMenuItem;
@@ -166,22 +165,6 @@ namespace Memory_Project
         public bool deckSettingMeme()
         {
             if (this.memeToolStripMenuItem.Checked)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Kijken of x8 setting deck is aangevinked
-        /// </summary>
-        /// <returns>x8MenuItem.Checked = true or false</returns>
-        public bool x8SettingDeck()
-        {
-            if (this.x8MenuItem.Checked)
             {
                 return true;
             }

@@ -39,7 +39,6 @@
             this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.x8MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x6MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x4MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripSettings.SuspendLayout();
@@ -121,39 +120,32 @@
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // musicToolStripMenuItem
             // 
             this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
-            this.musicToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.musicToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
             this.musicToolStripMenuItem.Text = "Music";
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // memeToolStripMenuItem
             // 
             this.memeToolStripMenuItem.Name = "memeToolStripMenuItem";
-            this.memeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.memeToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
             this.memeToolStripMenuItem.Text = "Meme";
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // sizeToolStripMenuItem
             // 
             this.sizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.x8MenuItem,
             this.x6MenuItem,
             this.x4MenuItem});
             this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
             this.sizeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.sizeToolStripMenuItem.Text = "Size";
-            // 
-            // x8MenuItem
-            // 
-            this.x8MenuItem.Name = "x8MenuItem";
-            this.x8MenuItem.Size = new System.Drawing.Size(210, 30);
-            this.x8MenuItem.Text = "8x8";
             // 
             // x6MenuItem
             // 
@@ -204,7 +196,6 @@
         private System.Windows.Forms.ToolStripMenuItem musicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem x8MenuItem;
         private System.Windows.Forms.ToolStripMenuItem x6MenuItem;
         private System.Windows.Forms.ToolStripMenuItem x4MenuItem;
     }

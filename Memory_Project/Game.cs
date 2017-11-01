@@ -37,11 +37,8 @@ namespace Memory_Project
 
             InitializeComponent();
             this.StartGame = ParentForm;
-            if (StartGame.x8SettingDeck())
-            {
-                MatrixSize = 8;
-            }
-            else if (StartGame.x6SettingDeck())
+           
+            if (StartGame.x6SettingDeck())
             {
                 MatrixSize = 6;
             }
@@ -76,11 +73,7 @@ namespace Memory_Project
             {
                 pictureBox[i] = new PictureBox();
                 pictureBox[i].Name = "pictureBox" + i;
-                if (StartGame.x8SettingDeck())
-                {
-                    pictureBox[i].Size = new Size(50, 75);
-                }
-                else if (StartGame.x6SettingDeck())
+                if (StartGame.x6SettingDeck())
                 {
                     pictureBox[i].Size = new Size(66, 100);
                 }
@@ -129,12 +122,7 @@ namespace Memory_Project
             {
                 for (int iy = 0; iy < MatrixSize; iy++)
                 {
-                    if (StartGame.x8SettingDeck())
-                    {
-                        pictureBox[i].Location = new Point(40 + ix * 50, 50 + iy * 75);
-
-                    }
-                    else if(StartGame.x6SettingDeck())
+                    if(StartGame.x6SettingDeck())
                     {
                         pictureBox[i].Location = new Point(40 + ix * 66, 50 + iy * 100);
 
@@ -292,12 +280,8 @@ namespace Memory_Project
             {
                 for (int iy = 0; iy < MatrixSize; iy++)
                 {
-                    if (StartGame.x8SettingDeck())
-                    {
-                        pictureBox[i].Location = new Point(40 + ix * 50, 50 + iy * 75);
-
-                    }
-                    else if (StartGame.x6SettingDeck())
+                    
+                    if (StartGame.x6SettingDeck())
                     {
                         pictureBox[i].Location = new Point(40 + ix * 66, 50 + iy * 100);
 
