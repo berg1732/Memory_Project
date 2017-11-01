@@ -37,7 +37,19 @@ namespace Memory_Project
 
             InitializeComponent();
             this.StartGame = ParentForm;
+            if (StartGame.x8SettingDeck())
+            {
+                MatrixSize = 8;
+            }
+            else if (StartGame.x6SettingDeck())
+            {
+                MatrixSize = 6;
+            }
+            else
+            {
+                MatrixSize = 4;
 
+            }
             naamP1 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 1", -1, -1);
             naamP2 = Interaction.InputBox("Vul je naam in", "Vul je naam in", "Speler 2", -1, -1);
             lblScoreP1.Text = naamP1 + ": " + scoreP1;
@@ -49,6 +61,7 @@ namespace Memory_Project
             timerShowImages.Start();
             clickTimer.Interval = 1000;
             clickTimer.Tick += clickTimer_Tick;
+            
         }
 
         /// <summary>
@@ -58,12 +71,24 @@ namespace Memory_Project
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
             int i = 0;
-            while (i <= 16 - 1)
+            while (i <= MatrixSize * MatrixSize - 1)
 
             {
                 pictureBox[i] = new PictureBox();
                 pictureBox[i].Name = "pictureBox" + i;
-                pictureBox[i].Size = new Size(100, 150);
+                if (StartGame.x8SettingDeck())
+                {
+                    pictureBox[i].Size = new Size(50, 75);
+                }
+                else if (StartGame.x6SettingDeck())
+                {
+                    pictureBox[i].Size = new Size(66, 100);
+                }
+                else
+                {
+                    pictureBox[i].Size = new Size(100, 150);
+
+                }
                 pictureBox[i].Show();
                 pictureBox[i].Tag = null;
 
@@ -104,12 +129,14 @@ namespace Memory_Project
             {
                 for (int iy = 0; iy < MatrixSize; iy++)
                 {
-                    if (MatrixSize == 8)
+                    if (StartGame.x8SettingDeck())
                     {
+                        pictureBox[i].Location = new Point(40 + ix * 50, 50 + iy * 75);
 
                     }
-                    else if(MatrixSize == 6)
+                    else if(StartGame.x6SettingDeck())
                     {
+                        pictureBox[i].Location = new Point(40 + ix * 66, 50 + iy * 100);
 
                     }
                     else 
@@ -170,7 +197,7 @@ namespace Memory_Project
                 }
                 else if (memeDeckCheck == true)
                 {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
                     var result = new List<Image>();
                     var list = Directory.GetFiles(path, "*.jpg");
                     foreach (var item in list)
@@ -183,7 +210,7 @@ namespace Memory_Project
                 }
                 else
                 {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
                     var result = new List<Image>();
                     var list = Directory.GetFiles(path, "*.jpg");
                     foreach (var item in list)
@@ -237,12 +264,52 @@ namespace Memory_Project
         /// </summary>
         private void resetImages()
         {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/");
+
             foreach (var pic in PictureBoxes)
             {
+                if (StartGame.deckSettingGame())
+                {
+                    pic.ImageLocation = (path + "CoverG" + ".jpg");
+                }
+                else if (StartGame.deckSettingMusic())
+                {
+                    pic.ImageLocation = (path + "CoverM" + ".jpg");
+                }
+                else if (StartGame.deckSettingMeme())
+                {
+                    pic.ImageLocation = (path + "CoverMm" + ".jpg");
+                }
+                else
+                {
+                    pic.ImageLocation = (path + "CoverMm" + ".jpg");
+                }
                 pic.Tag = null;
                 pic.Visible = true;
             }
+            int i = 0;
+            for (int ix = 0; ix < MatrixSize; ix++)
+            {
+                for (int iy = 0; iy < MatrixSize; iy++)
+                {
+                    if (StartGame.x8SettingDeck())
+                    {
+                        pictureBox[i].Location = new Point(40 + ix * 50, 50 + iy * 75);
 
+                    }
+                    else if (StartGame.x6SettingDeck())
+                    {
+                        pictureBox[i].Location = new Point(40 + ix * 66, 50 + iy * 100);
+
+                    }
+                    else
+                    {
+                        pictureBox[i].Location = new Point(40 + ix * 100, 50 + iy * 150);
+
+                    }
+                    i++;
+                }
+            }
             // Score reset
             scoreP1 = 0;
             scoreP2 = 0;
@@ -527,6 +594,8 @@ namespace Memory_Project
                 file.WriteLine(naamP2.ToString());      // Naam speler 2
                 file.WriteLine(scoreP2.ToString());     // Score speler 2
                 file.WriteLine(lblTurn.ToString());     // Beurt welke speler
+                file.WriteLine(MatrixSize);             // groote speelveld
+
             }
         }
         /// <summary>
@@ -583,11 +652,12 @@ namespace Memory_Project
                             }
                         }
                     }
-                    List<string> text = File.ReadLines(openFile.FileName).Reverse().Take(5).ToList();
-                    naamP2 = text[2];
-                    scoreP2 = Int32.Parse(text[1]);
-                    scoreP1 = Int32.Parse(text[3]);
-                    naamP1 = text[4];
+                    List<string> text = File.ReadLines(openFile.FileName).Reverse().Take(6).ToList();
+                    naamP2 = text[3];
+                    scoreP2 = Int32.Parse(text[2]);
+                    scoreP1 = Int32.Parse(text[4]);
+                    naamP1 = text[5];
+                    MatrixSize = Int32.Parse(text[0]);
                 }
                 catch (Exception error)
                 {

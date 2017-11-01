@@ -41,6 +41,7 @@ namespace Memory_Project
         private void buttonMultiplayer_Click(object sender, EventArgs e)
         {
             {
+                bool q = x6SettingDeck();
                 // Een nieuwe instance aan maken. (Game Class)
                 Game Game = new Game(this);
 

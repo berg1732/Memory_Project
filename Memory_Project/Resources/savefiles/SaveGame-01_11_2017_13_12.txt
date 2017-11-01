@@ -1,0 +1,41 @@
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm16.jpg|{X=40,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm17.jpg|{X=40,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm7.jpg|{X=40,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm3.jpg|{X=40,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm2.jpg|{X=40,Y=450}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm8.jpg|{X=40,Y=550}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm13.jpg|{X=106,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm9.jpg|{X=106,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm4.jpg|{X=106,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm12.jpg|{X=106,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm15.jpg|{X=106,Y=450}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm3.jpg|{X=106,Y=550}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm11.jpg|{X=172,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm13.jpg|{X=172,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm4.jpg|{X=172,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm14.jpg|{X=172,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm18.jpg|{X=172,Y=550}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm5.jpg|{X=238,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm18.jpg|{X=238,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm7.jpg|{X=238,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm10.jpg|{X=238,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm8.jpg|{X=238,Y=450}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm5.jpg|{X=238,Y=550}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm16.jpg|{X=304,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm2.jpg|{X=304,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm15.jpg|{X=304,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm9.jpg|{X=304,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm6.jpg|{X=304,Y=450}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm10.jpg|{X=304,Y=550}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm6.jpg|{X=370,Y=50}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm12.jpg|{X=370,Y=150}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm14.jpg|{X=370,Y=250}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm17.jpg|{X=370,Y=350}
+C:\Users\Kris van den Berg\Source\Repos\Memory_Project\Memory_Project\bin\Debug\../../Resources/deckMm6\CardMm11.jpg|{X=370,Y=450}
+asdfghjklqwertyuiop
+Speler 1
+1
+Speler 2
+0
+System.Windows.Forms.Label, Text: Speler 1 is aan de beurt
+6
