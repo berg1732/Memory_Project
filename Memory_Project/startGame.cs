@@ -16,6 +16,7 @@ namespace Memory_Project
     public partial class startGame : Form
     {
         private ToolStripMenuItem temp;
+
         /// <summary>
         /// constructor die het form aan maakt
         /// </summary>
@@ -26,6 +27,11 @@ namespace Memory_Project
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.decksToolStripMenuItem;
+
+            this.x8MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.x6MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.x4MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            temp = this.sizeToolStripMenuItem;
 
         }
 
@@ -159,6 +165,54 @@ namespace Memory_Project
         public bool deckSettingMeme()
         {
             if (this.memeToolStripMenuItem.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Kijken of x8 setting deck is aangevinked
+        /// </summary>
+        /// <returns>x8MenuItem.Checked = true or false</returns>
+        public bool x8SettingDeck()
+        {
+            if (this.x8MenuItem.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Kijken of x6 setting deck is aangevinked
+        /// </summary>
+        /// <returns>x6MenuItem.Checked = true or false</returns>
+        public bool x6SettingDeck()
+        {
+            if (this.x6MenuItem.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Kijken of x4 setting deck is aangevinked
+        /// </summary>
+        /// <returns>x4MenuItem.Checked = true or false</returns>
+        public bool x4SettingDeck()
+        {
+            if (this.x4MenuItem.Checked)
             {
                 return true;
             }

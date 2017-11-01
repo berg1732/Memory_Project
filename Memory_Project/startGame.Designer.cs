@@ -38,16 +38,21 @@
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x8MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x6MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x4MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonMultiplayer
             // 
             this.buttonMultiplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonMultiplayer.Font = new System.Drawing.Font("Carter One", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMultiplayer.Location = new System.Drawing.Point(405, 41);
+            this.buttonMultiplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMultiplayer.Location = new System.Drawing.Point(608, 63);
+            this.buttonMultiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMultiplayer.Name = "buttonMultiplayer";
-            this.buttonMultiplayer.Size = new System.Drawing.Size(85, 23);
+            this.buttonMultiplayer.Size = new System.Drawing.Size(128, 35);
             this.buttonMultiplayer.TabIndex = 0;
             this.buttonMultiplayer.Text = "Multiplayer";
             this.buttonMultiplayer.UseVisualStyleBackColor = false;
@@ -56,10 +61,11 @@
             // buttonLeaderboard
             // 
             this.buttonLeaderboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonLeaderboard.Font = new System.Drawing.Font("Carter One", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(405, 70);
+            this.buttonLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLeaderboard.Location = new System.Drawing.Point(608, 108);
+            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(85, 23);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(128, 35);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
@@ -68,10 +74,11 @@
             // buttonSingleplayer
             // 
             this.buttonSingleplayer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSingleplayer.Font = new System.Drawing.Font("Carter One", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSingleplayer.Location = new System.Drawing.Point(405, 12);
+            this.buttonSingleplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSingleplayer.Location = new System.Drawing.Point(608, 18);
+            this.buttonSingleplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSingleplayer.Name = "buttonSingleplayer";
-            this.buttonSingleplayer.Size = new System.Drawing.Size(85, 23);
+            this.buttonSingleplayer.Size = new System.Drawing.Size(128, 35);
             this.buttonSingleplayer.TabIndex = 2;
             this.buttonSingleplayer.Text = "Singleplayer";
             this.buttonSingleplayer.UseVisualStyleBackColor = false;
@@ -80,22 +87,25 @@
             // menuStripSettings
             // 
             this.menuStripSettings.BackColor = System.Drawing.Color.Transparent;
+            this.menuStripSettings.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStripSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem});
             this.menuStripSettings.Location = new System.Drawing.Point(0, 0);
             this.menuStripSettings.Name = "menuStripSettings";
-            this.menuStripSettings.Size = new System.Drawing.Size(521, 26);
+            this.menuStripSettings.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStripSettings.Size = new System.Drawing.Size(782, 34);
             this.menuStripSettings.TabIndex = 3;
             this.menuStripSettings.Text = "Settings";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.decksToolStripMenuItem});
-            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Carter One", 9F);
+            this.decksToolStripMenuItem,
+            this.sizeToolStripMenuItem});
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(87, 28);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // decksToolStripMenuItem
@@ -105,36 +115,64 @@
             this.musicToolStripMenuItem,
             this.memeToolStripMenuItem});
             this.decksToolStripMenuItem.Name = "decksToolStripMenuItem";
-            this.decksToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.decksToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.decksToolStripMenuItem.Text = "Decks";
             // 
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // musicToolStripMenuItem
             // 
             this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
-            this.musicToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.musicToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.musicToolStripMenuItem.Text = "Music";
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // memeToolStripMenuItem
             // 
             this.memeToolStripMenuItem.Name = "memeToolStripMenuItem";
-            this.memeToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.memeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.memeToolStripMenuItem.Text = "Meme";
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
+            // sizeToolStripMenuItem
+            // 
+            this.sizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.x8MenuItem,
+            this.x6MenuItem,
+            this.x4MenuItem});
+            this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
+            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.sizeToolStripMenuItem.Text = "Size";
+            // 
+            // x8MenuItem
+            // 
+            this.x8MenuItem.Name = "x8MenuItem";
+            this.x8MenuItem.Size = new System.Drawing.Size(210, 30);
+            this.x8MenuItem.Text = "8x8";
+            // 
+            // x6MenuItem
+            // 
+            this.x6MenuItem.Name = "x6MenuItem";
+            this.x6MenuItem.Size = new System.Drawing.Size(210, 30);
+            this.x6MenuItem.Text = "6x6";
+            // 
+            // x4MenuItem
+            // 
+            this.x4MenuItem.Name = "x4MenuItem";
+            this.x4MenuItem.Size = new System.Drawing.Size(210, 30);
+            this.x4MenuItem.Text = "4x4";
+            // 
             // startGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Memory_Project.Properties.Resources.Achtergrond2;
-            this.ClientSize = new System.Drawing.Size(521, 511);
+            this.ClientSize = new System.Drawing.Size(782, 786);
             this.Controls.Add(this.buttonSingleplayer);
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.buttonMultiplayer);
@@ -142,6 +180,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripSettings;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "startGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -164,6 +203,10 @@
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem musicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x8MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x6MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x4MenuItem;
     }
 }
 
