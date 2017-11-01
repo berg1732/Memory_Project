@@ -27,6 +27,7 @@ namespace Memory_Project
         int scoreP1 = 0;
         int scoreP2 = 0;
         int WinningScore;
+        int MatrixSize = 4;
         private startGame StartGame;
         /// <summary>
         /// Constructor waarin het Parrent Form meegegeven word
@@ -99,11 +100,23 @@ namespace Memory_Project
                 i++;
             }
             i = 0;
-            for (int ix = 0; ix < 4; ix++)
+            for (int ix = 0; ix < MatrixSize; ix++)
             {
-                for (int iy = 0; iy < 4; iy++)
+                for (int iy = 0; iy < MatrixSize; iy++)
                 {
-                    pictureBox[i].Location = new Point(40 + ix * 100, 50 + iy * 150);
+                    if (MatrixSize == 8)
+                    {
+
+                    }
+                    else if(MatrixSize == 6)
+                    {
+
+                    }
+                    else 
+                    {
+                        pictureBox[i].Location = new Point(40 + ix * 100, 50 + iy * 150);
+
+                    }
                     i++;
                 }
             }
