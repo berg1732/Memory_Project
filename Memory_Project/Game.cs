@@ -29,6 +29,7 @@ namespace Memory_Project
         int WinningScore;
         int MatrixSize = 4;
         private startGame StartGame;
+
         /// <summary>
         /// Constructor waarin het Parrent Form meegegeven word
         /// </summary>
@@ -148,7 +149,7 @@ namespace Memory_Project
         }
 
         /// <summary>
-        /// Images uit de resources map halen
+        /// Images uit de verschillende onderliggende map halen van Resources
         /// </summary>
         private  IEnumerable<Image> Images
         {
@@ -157,6 +158,7 @@ namespace Memory_Project
                 bool gameDeckCheck = StartGame.deckSettingGame();
                 bool musicDeckCheck = StartGame.deckSettingMusic();
                 bool memeDeckCheck = StartGame.deckSettingMeme();
+
                 if (MatrixSize == 6)
                 {
                     if (gameDeckCheck == true)
