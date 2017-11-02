@@ -50,7 +50,7 @@ namespace Memory_Project
                 }
             }
             var d = dic;
-            singleScoreBox.Text = text; // Score voor singleplayer
+            singleScoreBox.Text = text + Environment.NewLine; // Score voor singleplayer
         }
 
         /// <summary>
