@@ -16,7 +16,7 @@ namespace Memory_Project
     public partial class startGame : Form
     {
         private ToolStripMenuItem temp;
-
+        private ToolStripMenuItem temp2;
         /// <summary>
         /// constructor die het form aan maakt
         /// </summary>
@@ -28,9 +28,9 @@ namespace Memory_Project
             this.memeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             temp = this.decksToolStripMenuItem;
 
-            this.x6MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
-            this.x4MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
-            temp = this.sizeToolStripMenuItem;
+            this.x6MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem2_Click);
+            this.x4MenuItem.Click += new System.EventHandler(this.ToolStripMenuItem2_Click);
+            temp2 = this.sizeToolStripMenuItem;
 
         }
 
@@ -124,6 +124,21 @@ namespace Memory_Project
             temp = (ToolStripMenuItem)sender;
             // check 
             temp.CheckState = CheckState.Checked;
+        }
+
+        /// <summary>
+        /// Checked of unchecked
+        /// </summary>
+        /// <param name="sender = unchecked"></param>
+        /// <param name="e as temp"></param>
+        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+            // uncheck 
+            temp2.CheckState = CheckState.Unchecked;
+            temp2 = (ToolStripMenuItem)sender;
+            // check 
+            temp2.CheckState = CheckState.Checked;
         }
 
         /// <summary>

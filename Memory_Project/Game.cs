@@ -157,58 +157,118 @@ namespace Memory_Project
                 bool gameDeckCheck = StartGame.deckSettingGame();
                 bool musicDeckCheck = StartGame.deckSettingMusic();
                 bool memeDeckCheck = StartGame.deckSettingMeme();
-                if (gameDeckCheck == true)
+                if (MatrixSize == 6)
                 {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
-                    var result = new List<Image>();
-                    var list = Directory.GetFiles(path, "*.jpg");
-                    foreach (var item in list)
+                    if (gameDeckCheck == true)
                     {
-                        var img = Image.FromFile(item);
-                        img.Tag = item;
-                        result.Add(img);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck6");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
                     }
-                    return result;
-                }
-                else if (musicDeckCheck == true)
-                {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
-                    var result = new List<Image>();
-                    var list = Directory.GetFiles(path, "*.jpg");
-                    foreach (var item in list)
+                    else if (musicDeckCheck == true)
                     {
-                        var img = Image.FromFile(item);
-                        img.Tag = item;
-                        result.Add(img);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm6");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
                     }
-                    return result;
-                }
-                else if (memeDeckCheck == true)
-                {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
-                    var result = new List<Image>();
-                    var list = Directory.GetFiles(path, "*.jpg");
-                    foreach (var item in list)
+                    else if (memeDeckCheck == true)
                     {
-                        var img = Image.FromFile(item);
-                        img.Tag = item;
-                        result.Add(img);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
                     }
-                    return result;
+                    else
+                    {
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
+                    }
                 }
                 else
                 {
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm6");
-                    var result = new List<Image>();
-                    var list = Directory.GetFiles(path, "*.jpg");
-                    foreach (var item in list)
+                    if (gameDeckCheck == true)
                     {
-                        var img = Image.FromFile(item);
-                        img.Tag = item;
-                        result.Add(img);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deck");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
                     }
-                    return result;
+                    else if (musicDeckCheck == true)
+                    {
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckm");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
+                    }
+                    else if (memeDeckCheck == true)
+                    {
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
+                    }
+                    else
+                    {
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/deckMm");
+                        var result = new List<Image>();
+                        var list = Directory.GetFiles(path, "*.jpg");
+                        foreach (var item in list)
+                        {
+                            var img = Image.FromFile(item);
+                            img.Tag = item;
+                            result.Add(img);
+                        }
+                        return result;
+                    }
                 }
+
+               
             }
         }
         /// <summary>
