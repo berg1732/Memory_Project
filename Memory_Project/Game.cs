@@ -564,7 +564,7 @@ namespace Memory_Project
             System.Media.SoundPlayer sp = new System.Media.SoundPlayer(path);
             sp.Play();
 
-            MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen", " Je bent officeel een Meme Mister", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Gefeliciteerd " + winPlayer + " heeft gewonnen!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             using (StreamWriter file =
             new StreamWriter(Directory.GetCurrentDirectory() + "../../../Resources/scoreboardMulti.txt", true))
             {
